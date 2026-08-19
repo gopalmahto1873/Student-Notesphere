@@ -1,0 +1,1077 @@
+Folder PATH listing
+Volume serial number is B0BB-0CCB
+C:.
++---Backend
+|   +---controllers
+|   +---middleware
+|   +---models
+|   +---node_modules
+|   |   +---.bin
+|   |   +---@fast-csv
+|   |   |   +---format
+|   |   |   |   \---build
+|   |   |   |       \---src
+|   |   |   |           \---formatter
+|   |   |   \---parse
+|   |   |       \---build
+|   |   |           \---src
+|   |   |               +---parser
+|   |   |               |   \---column
+|   |   |               \---transforms
+|   |   +---@mongodb-js
+|   |   |   \---saslprep
+|   |   |       \---dist
+|   |   +---@noble
+|   |   |   +---ciphers
+|   |   |   |   +---esm
+|   |   |   |   \---src
+|   |   |   \---hashes
+|   |   |       +---esm
+|   |   |       \---src
+|   |   +---@swc
+|   |   |   \---helpers
+|   |   |       +---cjs
+|   |   |       +---esm
+|   |   |       +---scripts
+|   |   |       +---src
+|   |   |       \---_
+|   |   |           +---index
+|   |   |           +---_apply_decorated_descriptor
+|   |   |           +---_apply_decs_2203_r
+|   |   |           +---_apply_decs_2311
+|   |   |           +---_array_like_to_array
+|   |   |           +---_array_without_holes
+|   |   |           +---_array_with_holes
+|   |   |           +---_assert_this_initialized
+|   |   |           +---_async_generator
+|   |   |           +---_async_generator_delegate
+|   |   |           +---_async_iterator
+|   |   |           +---_async_to_generator
+|   |   |           +---_await_async_generator
+|   |   |           +---_await_value
+|   |   |           +---_call_super
+|   |   |           +---_check_private_redeclaration
+|   |   |           +---_class_apply_descriptor_destructure
+|   |   |           +---_class_apply_descriptor_get
+|   |   |           +---_class_apply_descriptor_set
+|   |   |           +---_class_apply_descriptor_update
+|   |   |           +---_class_call_check
+|   |   |           +---_class_check_private_static_access
+|   |   |           +---_class_check_private_static_field_descriptor
+|   |   |           +---_class_extract_field_descriptor
+|   |   |           +---_class_name_tdz_error
+|   |   |           +---_class_private_field_destructure
+|   |   |           +---_class_private_field_get
+|   |   |           +---_class_private_field_init
+|   |   |           +---_class_private_field_loose_base
+|   |   |           +---_class_private_field_loose_key
+|   |   |           +---_class_private_field_set
+|   |   |           +---_class_private_field_update
+|   |   |           +---_class_private_method_get
+|   |   |           +---_class_private_method_init
+|   |   |           +---_class_private_method_set
+|   |   |           +---_class_static_private_field_destructure
+|   |   |           +---_class_static_private_field_spec_get
+|   |   |           +---_class_static_private_field_spec_set
+|   |   |           +---_class_static_private_field_update
+|   |   |           +---_class_static_private_method_get
+|   |   |           +---_construct
+|   |   |           +---_create_class
+|   |   |           +---_create_for_of_iterator_helper_loose
+|   |   |           +---_create_super
+|   |   |           +---_decorate
+|   |   |           +---_defaults
+|   |   |           +---_define_enumerable_properties
+|   |   |           +---_define_property
+|   |   |           +---_dispose
+|   |   |           +---_export_star
+|   |   |           +---_extends
+|   |   |           +---_get
+|   |   |           +---_get_prototype_of
+|   |   |           +---_identity
+|   |   |           +---_inherits
+|   |   |           +---_inherits_loose
+|   |   |           +---_initializer_define_property
+|   |   |           +---_initializer_warning_helper
+|   |   |           +---_instanceof
+|   |   |           +---_interop_require_default
+|   |   |           +---_interop_require_wildcard
+|   |   |           +---_is_native_function
+|   |   |           +---_is_native_reflect_construct
+|   |   |           +---_iterable_to_array
+|   |   |           +---_iterable_to_array_limit
+|   |   |           +---_iterable_to_array_limit_loose
+|   |   |           +---_jsx
+|   |   |           +---_new_arrow_check
+|   |   |           +---_non_iterable_rest
+|   |   |           +---_non_iterable_spread
+|   |   |           +---_object_destructuring_empty
+|   |   |           +---_object_spread
+|   |   |           +---_object_spread_props
+|   |   |           +---_object_without_properties
+|   |   |           +---_object_without_properties_loose
+|   |   |           +---_overload_yield
+|   |   |           +---_possible_constructor_return
+|   |   |           +---_read_only_error
+|   |   |           +---_set
+|   |   |           +---_set_prototype_of
+|   |   |           +---_skip_first_generator_next
+|   |   |           +---_sliced_to_array
+|   |   |           +---_sliced_to_array_loose
+|   |   |           +---_super_prop_base
+|   |   |           +---_tagged_template_literal
+|   |   |           +---_tagged_template_literal_loose
+|   |   |           +---_throw
+|   |   |           +---_to_array
+|   |   |           +---_to_consumable_array
+|   |   |           +---_to_primitive
+|   |   |           +---_to_property_key
+|   |   |           +---_ts_add_disposable_resource
+|   |   |           +---_ts_decorate
+|   |   |           +---_ts_dispose_resources
+|   |   |           +---_ts_generator
+|   |   |           +---_ts_metadata
+|   |   |           +---_ts_param
+|   |   |           +---_ts_rewrite_relative_import_extension
+|   |   |           +---_ts_values
+|   |   |           +---_type_of
+|   |   |           +---_unsupported_iterable_to_array
+|   |   |           +---_update
+|   |   |           +---_using
+|   |   |           +---_using_ctx
+|   |   |           +---_wrap_async_generator
+|   |   |           +---_wrap_native_super
+|   |   |           +---_wrap_reg_exp
+|   |   |           \---_write_only_error
+|   |   +---@types
+|   |   |   +---node
+|   |   |   |   +---fs
+|   |   |   |   \---ts4.8
+|   |   |   |       \---fs
+|   |   |   +---webidl-conversions
+|   |   |   \---whatwg-url
+|   |   |       \---lib
+|   |   +---accepts
+|   |   +---adler-32
+|   |   |   \---types
+|   |   +---agent-base
+|   |   |   \---dist
+|   |   +---anymatch
+|   |   +---archiver
+|   |   |   \---lib
+|   |   |       \---plugins
+|   |   +---archiver-utils
+|   |   |   \---node_modules
+|   |   |       +---readable-stream
+|   |   |       |   +---doc
+|   |   |       |   |   \---wg-meetings
+|   |   |       |   \---lib
+|   |   |       |       \---internal
+|   |   |       |           \---streams
+|   |   |       +---safe-buffer
+|   |   |       \---string_decoder
+|   |   |           \---lib
+|   |   +---async
+|   |   |   +---dist
+|   |   |   \---internal
+|   |   +---balanced-match
+|   |   |   \---dist
+|   |   |       +---commonjs
+|   |   |       \---esm
+|   |   +---base64-js
+|   |   +---bcryptjs
+|   |   |   +---bin
+|   |   |   \---umd
+|   |   +---big-integer
+|   |   +---bignumber.js
+|   |   |   \---doc
+|   |   +---binary
+|   |   |   +---example
+|   |   |   +---lib
+|   |   |   +---perf
+|   |   |   \---test
+|   |   +---binary-extensions
+|   |   +---bl
+|   |   |   \---test
+|   |   +---bluebird
+|   |   |   \---js
+|   |   |       +---browser
+|   |   |       \---release
+|   |   +---body-parser
+|   |   |   \---lib
+|   |   |       \---types
+|   |   +---brace-expansion
+|   |   |   \---dist
+|   |   |       +---commonjs
+|   |   |       \---esm
+|   |   +---braces
+|   |   |   \---lib
+|   |   +---brotli
+|   |   |   +---build
+|   |   |   +---dec
+|   |   |   \---enc
+|   |   +---browserify-zlib
+|   |   |   +---lib
+|   |   |   \---src
+|   |   +---bson
+|   |   |   +---etc
+|   |   |   +---lib
+|   |   |   \---src
+|   |   |       +---parser
+|   |   |       |   \---on_demand
+|   |   |       \---utils
+|   |   +---buffer
+|   |   +---buffer-crc32
+|   |   +---buffer-equal-constant-time
+|   |   +---buffer-indexof-polyfill
+|   |   |   \---test
+|   |   +---buffers
+|   |   |   +---examples
+|   |   |   \---test
+|   |   +---bytes
+|   |   +---call-bind-apply-helpers
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---call-bound
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---cfb
+|   |   |   +---dist
+|   |   |   \---types
+|   |   +---chainsaw
+|   |   |   +---examples
+|   |   |   \---test
+|   |   +---chokidar
+|   |   |   +---lib
+|   |   |   \---types
+|   |   +---clone
+|   |   +---codepage
+|   |   |   +---bits
+|   |   |   +---dist
+|   |   |   \---types
+|   |   +---compress-commons
+|   |   |   \---lib
+|   |   |       +---archivers
+|   |   |       |   \---zip
+|   |   |       \---util
+|   |   +---concat-map
+|   |   |   +---example
+|   |   |   \---test
+|   |   +---content-disposition
+|   |   +---content-type
+|   |   +---cookie
+|   |   +---cookie-signature
+|   |   +---core-util-is
+|   |   |   \---lib
+|   |   +---cors
+|   |   |   \---lib
+|   |   +---crc-32
+|   |   |   +---bin
+|   |   |   \---types
+|   |   +---crc32-stream
+|   |   |   \---lib
+|   |   +---data-uri-to-buffer
+|   |   |   +---dist
+|   |   |   \---src
+|   |   +---dayjs
+|   |   |   +---esm
+|   |   |   |   +---locale
+|   |   |   |   \---plugin
+|   |   |   |       +---advancedFormat
+|   |   |   |       +---arraySupport
+|   |   |   |       +---badMutable
+|   |   |   |       +---bigIntSupport
+|   |   |   |       +---buddhistEra
+|   |   |   |       +---calendar
+|   |   |   |       +---customParseFormat
+|   |   |   |       +---dayOfYear
+|   |   |   |       +---devHelper
+|   |   |   |       +---duration
+|   |   |   |       +---isBetween
+|   |   |   |       +---isLeapYear
+|   |   |   |       +---isMoment
+|   |   |   |       +---isoWeek
+|   |   |   |       +---isoWeeksInYear
+|   |   |   |       +---isSameOrAfter
+|   |   |   |       +---isSameOrBefore
+|   |   |   |       +---isToday
+|   |   |   |       +---isTomorrow
+|   |   |   |       +---isYesterday
+|   |   |   |       +---localeData
+|   |   |   |       +---localizedFormat
+|   |   |   |       +---minMax
+|   |   |   |       +---negativeYear
+|   |   |   |       +---objectSupport
+|   |   |   |       +---pluralGetSet
+|   |   |   |       +---preParsePostFormat
+|   |   |   |       +---quarterOfYear
+|   |   |   |       +---relativeTime
+|   |   |   |       +---timezone
+|   |   |   |       +---toArray
+|   |   |   |       +---toObject
+|   |   |   |       +---updateLocale
+|   |   |   |       +---utc
+|   |   |   |       +---weekday
+|   |   |   |       +---weekOfYear
+|   |   |   |       \---weekYear
+|   |   |   +---locale
+|   |   |   \---plugin
+|   |   +---debug
+|   |   |   \---src
+|   |   +---depd
+|   |   |   \---lib
+|   |   |       \---browser
+|   |   +---dfa
+|   |   +---dotenv
+|   |   |   +---lib
+|   |   |   \---skills
+|   |   |       +---dotenv
+|   |   |       \---dotenvx
+|   |   +---dunder-proto
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---duplexer2
+|   |   |   \---node_modules
+|   |   |       +---readable-stream
+|   |   |       |   +---doc
+|   |   |       |   |   \---wg-meetings
+|   |   |       |   \---lib
+|   |   |       |       \---internal
+|   |   |       |           \---streams
+|   |   |       +---safe-buffer
+|   |   |       \---string_decoder
+|   |   |           \---lib
+|   |   +---ecdsa-sig-formatter
+|   |   |   \---src
+|   |   +---ee-first
+|   |   +---encodeurl
+|   |   +---end-of-stream
+|   |   +---es-define-property
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---es-errors
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---es-object-atoms
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---escape-html
+|   |   +---etag
+|   |   +---exceljs
+|   |   |   +---dist
+|   |   |   |   \---es5
+|   |   |   |       +---csv
+|   |   |   |       +---doc
+|   |   |   |       +---stream
+|   |   |   |       |   \---xlsx
+|   |   |   |       +---utils
+|   |   |   |       \---xlsx
+|   |   |   |           +---xform
+|   |   |   |           |   +---book
+|   |   |   |           |   +---comment
+|   |   |   |           |   |   \---style
+|   |   |   |           |   +---core
+|   |   |   |           |   +---drawing
+|   |   |   |           |   +---sheet
+|   |   |   |           |   |   +---cf
+|   |   |   |           |   |   \---cf-ext
+|   |   |   |           |   +---simple
+|   |   |   |           |   +---strings
+|   |   |   |           |   +---style
+|   |   |   |           |   \---table
+|   |   |   |           \---xml
+|   |   |   \---lib
+|   |   |       +---csv
+|   |   |       +---doc
+|   |   |       |   \---data
+|   |   |       +---stream
+|   |   |       |   \---xlsx
+|   |   |       +---utils
+|   |   |       \---xlsx
+|   |   |           +---xform
+|   |   |           |   +---book
+|   |   |           |   +---comment
+|   |   |           |   |   \---style
+|   |   |           |   +---core
+|   |   |           |   +---drawing
+|   |   |           |   +---sheet
+|   |   |           |   |   +---cf
+|   |   |           |   |   \---cf-ext
+|   |   |           |   +---simple
+|   |   |           |   +---strings
+|   |   |           |   +---style
+|   |   |           |   \---table
+|   |   |           \---xml
+|   |   +---express
+|   |   |   \---lib
+|   |   +---extend
+|   |   +---fast-csv
+|   |   |   \---build
+|   |   |       \---src
+|   |   +---fast-deep-equal
+|   |   |   \---es6
+|   |   +---fetch-blob
+|   |   +---fill-range
+|   |   +---finalhandler
+|   |   +---fontkit
+|   |   |   +---dist
+|   |   |   \---src
+|   |   |       +---aat
+|   |   |       +---cff
+|   |   |       +---glyph
+|   |   |       +---layout
+|   |   |       +---opentype
+|   |   |       |   \---shapers
+|   |   |       +---subset
+|   |   |       \---tables
+|   |   +---formdata-polyfill
+|   |   +---forwarded
+|   |   +---frac
+|   |   |   +---dist
+|   |   |   \---types
+|   |   +---fresh
+|   |   +---fs-constants
+|   |   +---fs.realpath
+|   |   +---fstream
+|   |   |   +---examples
+|   |   |   \---lib
+|   |   +---function-bind
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---gaxios
+|   |   |   \---build
+|   |   |       +---cjs
+|   |   |       |   +---browser-test
+|   |   |       |   +---src
+|   |   |       |   +---system-test
+|   |   |       |   \---test
+|   |   |       \---esm
+|   |   |           +---browser-test
+|   |   |           +---src
+|   |   |           +---system-test
+|   |   |           \---test
+|   |   +---gcp-metadata
+|   |   |   \---build
+|   |   |       \---src
+|   |   +---get-intrinsic
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---get-proto
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---glob
+|   |   |   \---node_modules
+|   |   |       +---balanced-match
+|   |   |       |   \---.github
+|   |   |       +---brace-expansion
+|   |   |       \---minimatch
+|   |   +---glob-parent
+|   |   +---google-auth-library
+|   |   |   +---build
+|   |   |   |   \---src
+|   |   |   |       +---auth
+|   |   |   |       +---crypto
+|   |   |   |       |   +---browser
+|   |   |   |       |   \---node
+|   |   |   |       \---gtoken
+|   |   |   \---node_modules
+|   |   |       \---gcp-metadata
+|   |   |           \---build
+|   |   |               \---src
+|   |   +---google-logging-utils
+|   |   |   \---build
+|   |   |       \---src
+|   |   +---gopd
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---graceful-fs
+|   |   +---has-flag
+|   |   +---has-symbols
+|   |   |   +---.github
+|   |   |   \---test
+|   |   |       \---shams
+|   |   +---hasown
+|   |   |   \---.github
+|   |   +---http-errors
+|   |   +---https-proxy-agent
+|   |   |   \---dist
+|   |   +---iconv-lite
+|   |   |   +---encodings
+|   |   |   |   \---tables
+|   |   |   +---lib
+|   |   |   |   \---helpers
+|   |   |   \---types
+|   |   +---ieee754
+|   |   +---ignore-by-default
+|   |   +---immediate
+|   |   |   +---dist
+|   |   |   \---lib
+|   |   +---inflight
+|   |   +---inherits
+|   |   +---ipaddr.js
+|   |   |   \---lib
+|   |   +---is-binary-path
+|   |   +---is-extglob
+|   |   +---is-glob
+|   |   +---is-number
+|   |   +---is-promise
+|   |   +---isarray
+|   |   +---js-md5
+|   |   |   +---build
+|   |   |   \---src
+|   |   +---json-bigint
+|   |   |   \---lib
+|   |   +---jsonwebtoken
+|   |   |   \---lib
+|   |   +---jszip
+|   |   |   +---.github
+|   |   |   |   \---workflows
+|   |   |   +---dist
+|   |   |   +---lib
+|   |   |   |   +---generate
+|   |   |   |   +---nodejs
+|   |   |   |   +---reader
+|   |   |   |   \---stream
+|   |   |   +---node_modules
+|   |   |   |   +---readable-stream
+|   |   |   |   |   +---doc
+|   |   |   |   |   |   \---wg-meetings
+|   |   |   |   |   \---lib
+|   |   |   |   |       \---internal
+|   |   |   |   |           \---streams
+|   |   |   |   +---safe-buffer
+|   |   |   |   \---string_decoder
+|   |   |   |       \---lib
+|   |   |   \---vendor
+|   |   +---jwa
+|   |   +---jws
+|   |   |   \---lib
+|   |   +---kareem
+|   |   |   +---.nyc_output
+|   |   |   |   \---processinfo
+|   |   |   \---coverage
+|   |   |       \---lcov-report
+|   |   +---lazystream
+|   |   |   +---lib
+|   |   |   +---node_modules
+|   |   |   |   +---readable-stream
+|   |   |   |   |   +---doc
+|   |   |   |   |   |   \---wg-meetings
+|   |   |   |   |   \---lib
+|   |   |   |   |       \---internal
+|   |   |   |   |           \---streams
+|   |   |   |   +---safe-buffer
+|   |   |   |   \---string_decoder
+|   |   |   |       \---lib
+|   |   |   \---test
+|   |   +---lie
+|   |   |   +---dist
+|   |   |   \---lib
+|   |   +---linebreak
+|   |   |   +---dist
+|   |   |   \---node_modules
+|   |   |       \---base64-js
+|   |   |           +---bench
+|   |   |           +---lib
+|   |   |           \---test
+|   |   +---listenercount
+|   |   |   \---test
+|   |   +---lodash.defaults
+|   |   +---lodash.difference
+|   |   +---lodash.escaperegexp
+|   |   +---lodash.flatten
+|   |   +---lodash.groupby
+|   |   +---lodash.includes
+|   |   +---lodash.isboolean
+|   |   +---lodash.isequal
+|   |   +---lodash.isfunction
+|   |   +---lodash.isinteger
+|   |   +---lodash.isnil
+|   |   +---lodash.isnumber
+|   |   +---lodash.isplainobject
+|   |   +---lodash.isstring
+|   |   +---lodash.isundefined
+|   |   +---lodash.once
+|   |   +---lodash.union
+|   |   +---lodash.uniq
+|   |   +---math-intrinsics
+|   |   |   +---.github
+|   |   |   +---constants
+|   |   |   \---test
+|   |   +---media-typer
+|   |   +---memory-pager
+|   |   +---merge-descriptors
+|   |   +---mime-db
+|   |   +---mime-types
+|   |   +---minimatch
+|   |   |   \---dist
+|   |   |       +---commonjs
+|   |   |       \---esm
+|   |   +---minimist
+|   |   |   +---.github
+|   |   |   +---example
+|   |   |   \---test
+|   |   +---mkdirp
+|   |   |   \---bin
+|   |   +---mongodb
+|   |   |   +---etc
+|   |   |   +---lib
+|   |   |   |   +---bulk
+|   |   |   |   +---client-side-encryption
+|   |   |   |   |   \---providers
+|   |   |   |   +---cmap
+|   |   |   |   |   +---auth
+|   |   |   |   |   |   \---mongodb_oidc
+|   |   |   |   |   +---handshake
+|   |   |   |   |   \---wire_protocol
+|   |   |   |   |       \---on_demand
+|   |   |   |   +---cursor
+|   |   |   |   +---gridfs
+|   |   |   |   +---operations
+|   |   |   |   |   +---client_bulk_write
+|   |   |   |   |   \---search_indexes
+|   |   |   |   \---sdam
+|   |   |   \---src
+|   |   |       +---bulk
+|   |   |       +---client-side-encryption
+|   |   |       |   \---providers
+|   |   |       +---cmap
+|   |   |       |   +---auth
+|   |   |       |   |   \---mongodb_oidc
+|   |   |       |   +---handshake
+|   |   |       |   \---wire_protocol
+|   |   |       |       \---on_demand
+|   |   |       +---cursor
+|   |   |       +---gridfs
+|   |   |       +---operations
+|   |   |       |   +---client_bulk_write
+|   |   |       |   \---search_indexes
+|   |   |       \---sdam
+|   |   +---mongodb-connection-string-url
+|   |   |   \---lib
+|   |   +---mongoose
+|   |   |   +---lib
+|   |   |   |   +---cast
+|   |   |   |   +---cursor
+|   |   |   |   +---drivers
+|   |   |   |   |   \---node-mongodb-native
+|   |   |   |   +---error
+|   |   |   |   +---helpers
+|   |   |   |   |   +---aggregate
+|   |   |   |   |   +---cursor
+|   |   |   |   |   +---discriminator
+|   |   |   |   |   +---document
+|   |   |   |   |   +---error
+|   |   |   |   |   +---indexes
+|   |   |   |   |   +---model
+|   |   |   |   |   +---path
+|   |   |   |   |   +---populate
+|   |   |   |   |   +---projection
+|   |   |   |   |   +---query
+|   |   |   |   |   +---schema
+|   |   |   |   |   +---schematype
+|   |   |   |   |   +---timestamps
+|   |   |   |   |   +---topology
+|   |   |   |   |   \---update
+|   |   |   |   +---options
+|   |   |   |   +---plugins
+|   |   |   |   +---schema
+|   |   |   |   |   \---operators
+|   |   |   |   \---types
+|   |   |   |       +---array
+|   |   |   |       |   \---methods
+|   |   |   |       \---documentArray
+|   |   |   |           \---methods
+|   |   |   \---types
+|   |   +---mpath
+|   |   |   +---lib
+|   |   |   \---test
+|   |   +---mquery
+|   |   |   +---.github
+|   |   |   \---lib
+|   |   |       \---collection
+|   |   +---ms
+|   |   +---negotiator
+|   |   |   \---lib
+|   |   +---node-domexception
+|   |   |   \---.history
+|   |   +---node-fetch
+|   |   |   +---@types
+|   |   |   \---src
+|   |   |       +---errors
+|   |   |       \---utils
+|   |   +---nodemailer
+|   |   |   \---lib
+|   |   |       +---addressparser
+|   |   |       +---base64
+|   |   |       +---dkim
+|   |   |       +---fetch
+|   |   |       +---json-transport
+|   |   |       +---mail-composer
+|   |   |       +---mailer
+|   |   |       +---mime-funcs
+|   |   |       +---mime-node
+|   |   |       +---punycode
+|   |   |       +---qp
+|   |   |       +---sendmail-transport
+|   |   |       +---ses-transport
+|   |   |       +---shared
+|   |   |       +---smtp-connection
+|   |   |       +---smtp-pool
+|   |   |       +---smtp-transport
+|   |   |       +---stream-transport
+|   |   |       +---well-known
+|   |   |       \---xoauth2
+|   |   +---nodemon
+|   |   |   +---bin
+|   |   |   +---doc
+|   |   |   |   \---cli
+|   |   |   \---lib
+|   |   |       +---cli
+|   |   |       +---config
+|   |   |       +---help
+|   |   |       +---monitor
+|   |   |       +---rules
+|   |   |       \---utils
+|   |   +---normalize-path
+|   |   +---object-assign
+|   |   +---object-inspect
+|   |   |   +---.github
+|   |   |   +---example
+|   |   |   \---test
+|   |   |       \---browser
+|   |   +---on-finished
+|   |   +---once
+|   |   +---pako
+|   |   |   +---dist
+|   |   |   \---lib
+|   |   |       +---utils
+|   |   |       \---zlib
+|   |   +---parseurl
+|   |   +---path-is-absolute
+|   |   +---path-to-regexp
+|   |   |   \---dist
+|   |   +---pdfkit
+|   |   |   +---.yarn
+|   |   |   |   \---releases
+|   |   |   +---js
+|   |   |   |   \---data
+|   |   |   \---types
+|   |   +---picomatch
+|   |   |   \---lib
+|   |   +---png-js
+|   |   |   \---lib
+|   |   +---process-nextick-args
+|   |   +---proxy-addr
+|   |   +---pstree.remy
+|   |   |   +---lib
+|   |   |   \---tests
+|   |   |       \---fixtures
+|   |   +---punycode
+|   |   +---qs
+|   |   |   +---.github
+|   |   |   +---dist
+|   |   |   +---lib
+|   |   |   \---test
+|   |   +---range-parser
+|   |   +---raw-body
+|   |   +---readable-stream
+|   |   |   \---lib
+|   |   |       \---internal
+|   |   |           \---streams
+|   |   +---readdir-glob
+|   |   |   \---node_modules
+|   |   |       +---balanced-match
+|   |   |       |   \---.github
+|   |   |       +---brace-expansion
+|   |   |       |   \---.github
+|   |   |       \---minimatch
+|   |   |           \---lib
+|   |   +---readdirp
+|   |   +---restructure
+|   |   |   +---dist
+|   |   |   +---src
+|   |   |   \---test
+|   |   +---rimraf
+|   |   +---router
+|   |   |   \---lib
+|   |   +---safe-buffer
+|   |   +---safer-buffer
+|   |   +---saxes
+|   |   +---semver
+|   |   |   +---bin
+|   |   |   +---classes
+|   |   |   +---functions
+|   |   |   +---internal
+|   |   |   \---ranges
+|   |   +---send
+|   |   +---serve-static
+|   |   +---setimmediate
+|   |   +---setprototypeof
+|   |   |   \---test
+|   |   +---side-channel
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---side-channel-list
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---side-channel-map
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---side-channel-weakmap
+|   |   |   +---.github
+|   |   |   \---test
+|   |   +---sift
+|   |   |   +---es
+|   |   |   +---es5m
+|   |   |   +---lib
+|   |   |   \---src
+|   |   +---simple-update-notifier
+|   |   |   +---build
+|   |   |   \---src
+|   |   +---sparse-bitfield
+|   |   +---ssf
+|   |   |   \---types
+|   |   +---statuses
+|   |   +---string_decoder
+|   |   |   \---lib
+|   |   +---supports-color
+|   |   +---tar-stream
+|   |   +---tiny-inflate
+|   |   |   \---test
+|   |   +---tmp
+|   |   |   \---lib
+|   |   +---to-regex-range
+|   |   +---toidentifier
+|   |   +---touch
+|   |   |   \---bin
+|   |   +---tr46
+|   |   |   \---lib
+|   |   +---traverse
+|   |   |   +---examples
+|   |   |   \---test
+|   |   +---tslib
+|   |   |   \---modules
+|   |   +---type-is
+|   |   +---undefsafe
+|   |   |   +---.github
+|   |   |   |   \---workflows
+|   |   |   \---lib
+|   |   +---unicode-properties
+|   |   |   \---dist
+|   |   +---unicode-trie
+|   |   |   +---node_modules
+|   |   |   |   \---pako
+|   |   |   |       +---dist
+|   |   |   |       \---lib
+|   |   |   |           +---utils
+|   |   |   |           \---zlib
+|   |   |   \---test
+|   |   +---unpipe
+|   |   +---unzipper
+|   |   |   +---.circleci
+|   |   |   +---lib
+|   |   |   |   \---Open
+|   |   |   \---node_modules
+|   |   |       +---readable-stream
+|   |   |       |   +---doc
+|   |   |       |   |   \---wg-meetings
+|   |   |       |   \---lib
+|   |   |       |       \---internal
+|   |   |       |           \---streams
+|   |   |       +---safe-buffer
+|   |   |       \---string_decoder
+|   |   |           \---lib
+|   |   +---util-deprecate
+|   |   +---uuid
+|   |   |   \---dist
+|   |   |       +---bin
+|   |   |       +---esm-browser
+|   |   |       +---esm-node
+|   |   |       \---umd
+|   |   +---vary
+|   |   +---web-streams-polyfill
+|   |   |   +---dist
+|   |   |   |   \---types
+|   |   |   |       \---ts3.6
+|   |   |   +---es2018
+|   |   |   +---es6
+|   |   |   \---ponyfill
+|   |   |       +---es2018
+|   |   |       \---es6
+|   |   +---webidl-conversions
+|   |   |   \---lib
+|   |   +---whatwg-url
+|   |   |   \---lib
+|   |   +---wmf
+|   |   |   \---dist
+|   |   +---word
+|   |   +---wrappy
+|   |   +---xlsx
+|   |   |   +---bin
+|   |   |   +---dist
+|   |   |   \---types
+|   |   +---xmlchars
+|   |   |   +---xml
+|   |   |   |   +---1.0
+|   |   |   |   \---1.1
+|   |   |   \---xmlns
+|   |   |       \---1.0
+|   |   \---zip-stream
+|   |       \---node_modules
+|   |           \---archiver-utils
+|   +---routes
+|   +---uploads
+|   |   \---pyq
+|   \---utils
++---frontend
+|   \---ads
+\---node_modules
+    +---@mongodb-js
+    |   \---saslprep
+    |       \---dist
+    +---@types
+    |   +---webidl-conversions
+    |   \---whatwg-url
+    |       \---lib
+    +---append-field
+    |   +---lib
+    |   \---test
+    +---bson
+    |   +---etc
+    |   +---lib
+    |   \---src
+    |       +---parser
+    |       |   \---on_demand
+    |       \---utils
+    +---buffer-from
+    +---busboy
+    |   +---.github
+    |   |   \---workflows
+    |   +---bench
+    |   +---lib
+    |   |   \---types
+    |   \---test
+    +---concat-stream
+    +---inherits
+    +---kareem
+    |   +---.nyc_output
+    |   |   \---processinfo
+    |   \---coverage
+    |       \---lcov-report
+    +---media-typer
+    +---memory-pager
+    +---mime-db
+    +---mime-types
+    +---mongodb
+    |   +---etc
+    |   +---lib
+    |   |   +---bulk
+    |   |   +---client-side-encryption
+    |   |   |   \---providers
+    |   |   +---cmap
+    |   |   |   +---auth
+    |   |   |   |   \---mongodb_oidc
+    |   |   |   +---handshake
+    |   |   |   \---wire_protocol
+    |   |   |       \---on_demand
+    |   |   +---cursor
+    |   |   +---gridfs
+    |   |   +---operations
+    |   |   |   +---client_bulk_write
+    |   |   |   \---search_indexes
+    |   |   \---sdam
+    |   \---src
+    |       +---bulk
+    |       +---client-side-encryption
+    |       |   \---providers
+    |       +---cmap
+    |       |   +---auth
+    |       |   |   \---mongodb_oidc
+    |       |   +---handshake
+    |       |   \---wire_protocol
+    |       |       \---on_demand
+    |       +---cursor
+    |       +---gridfs
+    |       +---operations
+    |       |   +---client_bulk_write
+    |       |   \---search_indexes
+    |       \---sdam
+    +---mongodb-connection-string-url
+    |   \---lib
+    +---mongoose
+    |   +---lib
+    |   |   +---cast
+    |   |   +---cursor
+    |   |   +---drivers
+    |   |   |   \---node-mongodb-native
+    |   |   +---error
+    |   |   +---helpers
+    |   |   |   +---aggregate
+    |   |   |   +---cursor
+    |   |   |   +---discriminator
+    |   |   |   +---document
+    |   |   |   +---error
+    |   |   |   +---indexes
+    |   |   |   +---model
+    |   |   |   +---path
+    |   |   |   +---populate
+    |   |   |   +---projection
+    |   |   |   +---query
+    |   |   |   +---schema
+    |   |   |   +---schematype
+    |   |   |   +---timestamps
+    |   |   |   +---topology
+    |   |   |   \---update
+    |   |   +---options
+    |   |   +---plugins
+    |   |   +---schema
+    |   |   |   \---operators
+    |   |   \---types
+    |   |       +---array
+    |   |       |   \---methods
+    |   |       \---documentArray
+    |   |           \---methods
+    |   \---types
+    +---mpath
+    |   +---lib
+    |   \---test
+    +---mquery
+    |   +---.github
+    |   \---lib
+    |       \---collection
+    +---ms
+    +---multer
+    |   +---lib
+    |   \---storage
+    +---punycode
+    +---readable-stream
+    |   \---lib
+    |       \---internal
+    |           \---streams
+    +---safe-buffer
+    +---sift
+    |   +---es
+    |   +---es5m
+    |   +---lib
+    |   \---src
+    +---sparse-bitfield
+    +---streamsearch
+    |   +---.github
+    |   |   \---workflows
+    |   +---lib
+    |   \---test
+    +---string_decoder
+    |   \---lib
+    +---tr46
+    |   \---lib
+    +---type-is
+    +---typedarray
+    |   +---example
+    |   \---test
+    |       \---server
+    +---util-deprecate
+    +---webidl-conversions
+    |   \---lib
+    \---whatwg-url
+        \---lib

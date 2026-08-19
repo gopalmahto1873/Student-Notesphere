@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ================= META ================= -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Dashboard - Student Notesphere</title>
+
+    <!-- ================= CSS ================= -->
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="teacher.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo-title">
+
+            <img src="logo.png" alt="Logo">
+
+            <h1>Student Notesphere - Teacher Dashboard</h1>
+
+        </div>
+
+        <a href="index.html" class="back-btn">
+
+            ⬅ Back to Home
+
+        </a>
+
+    </header>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="pyq.html">PYQ</a></li>
+        </ul>
+        <div class="nav-right">
+
+            <div class="profile-menu" id="profileMenu">
+
+                <span id="navTeacherName">
+                    Teacher
+                </span>
+
+                <img src="logo.png" id="profileIcon" alt="Teacher Profile">
+
+                <div class="dropdown">
+
+                    <a href="profile.html">
+                        My Profile
+                    </a>
+
+                    <a href="#" id="logoutBtn">
+                        Logout
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section class="dashboard-section">
+
+        <!-- ================= LOADER ================= -->
+
+        <div id="dashboardLoader">
+
+            <div class="loaderBox">
+
+                <div class="loaderCircle"></div>
+
+                <h2>
+
+                    Loading Teacher Dashboard...
+
+                </h2>
+
+                <p>
+
+                    Please wait...
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ================= DASHBOARD CONTENT ================= -->
+
+        <div id="dashboardContent">
+
+            <!-- ================= TOP ================= -->
+
+            <div class="dashboard-top">
+
+                <!-- Welcome -->
+
+                <div class="welcome-box">
+
+                    <h2 id="dashboardGreeting">
+
+                        <h2 id="dashboardGreeting"></h2>
+
+                    </h2>
+
+                    <p>
+
+                        Welcome back to Student Notesphere Teacher Panel
+
+                    </p>
+
+                </div>
+
+                <!-- Right Side -->
+
+                <div class="right-top-box">
+
+                    <div class="dashboard-date">
+
+                        <span id="todayDate"></span>
+
+                    </div>
+
+                    <div class="last-login-box">
+
+                        <strong>
+
+                            Last Login
+
+                        </strong>
+
+                        <span id="lastLoginText">
+
+                            Loading...
+
+                        </span>
+
+                    </div>
+
+                    <!-- Notification -->
+
+                    <div class="notification-box">
+
+                        <button id="notificationBtn" class="notification-btn" onclick="toggleNotificationPopup()">
+
+                            🔔
+
+                            <span id="notificationCount" class="notification-count">
+
+                                0
+
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ================= QUICK ACTIONS ================= -->
+
+            <div class="quick-actions">
+
+                <a href="notes.html" class="quick-btn">
+
+                    📚 Upload Notes
+
+                </a>
+
+                <a href="quiz.html" class="quick-btn">
+
+                    📝 Create Quiz
+
+                </a>
+
+                <a href="pyq.html" class="quick-btn">
+
+                    📄 Upload PYQ
+
+                </a>
+
+                <a href="#myUploadsSection" class="quick-btn">
+
+                    📂 My Uploads
+
+                </a>
+
+                <a href="profile.html" class="quick-btn">
+
+                    👤 My Profile
+
+                </a>
+
+            </div>
+
+            <!-- ================= SUMMARY STRIP ================= -->
+
+            <div class="summary-strip">
+
+                <div class="summary-item">
+
+                    📚 Notes Upload System Active
+
+                </div>
+
+                <div class="summary-item">
+
+                    📝 Quiz Management Enabled
+
+                </div>
+
+                <div class="summary-item">
+
+                    📄 Previous Year Questions Ready
+
+                </div>
+
+            </div>
+
+            <!-- ================= STATISTICS ================= -->
+
+            <div class="stats-container">
+
+                <div class="stat-card notes-card">
+
+                    <div class="stat-icon">📚</div>
+
+                    <h3 id="totalNotes">0</h3>
+
+                    <p>Total Notes</p>
+
+                </div>
+
+                <div class="stat-card quiz-card">
+
+                    <div class="stat-icon">📝</div>
+
+                    <h3 id="totalQuiz">0</h3>
+
+                    <p>Total Quiz</p>
+
+                </div>
+
+                <div class="stat-card pyq-card">
+
+                    <div class="stat-icon">📄</div>
+
+                    <h3 id="totalPYQ">0</h3>
+
+                    <p>Total PYQ</p>
+
+                </div>
+
+                <div class="stat-card download-card">
+
+                    <div class="stat-icon">⬇</div>
+
+                    <h3 id="totalDownloads">0</h3>
+
+                    <p>Total Downloads</p>
+
+                </div>
+
+                <div class="stat-card upload-card">
+
+                    <div class="stat-icon">⏰</div>
+
+                    <h3 id="recentUploads">0</h3>
+
+                    <p>Recent Uploads</p>
+
+                </div>
+
+                <div class="stat-card views-card">
+
+                    <div class="stat-icon">👀</div>
+
+                    <h3 id="totalViews">0</h3>
+
+                    <p>Total Views</p>
+
+                </div>
+
+            </div>
+
+            <!-- ================= QUICK OVERVIEW ================= -->
+
+            <div class="teacher-overview">
+
+                <div class="overview-card">
+
+                    <h3>🔥 Most Downloaded Notes</h3>
+                    <p id="topDownloadedNote"> Loading... </p>
+
+                </div>
+
+                <div class="overview-card">
+
+                    <h3> 📝 Latest Quiz </h3>
+                    <p id="latestQuiz"> Loading...</p>
+
+                </div>
+
+                <div class="overview-card">
+
+                    <h3> 📄 Latest PYQ </h3>
+                    <p id="latestPYQ"> Loading... </p>
+
+                </div>
+
+            </div>
+
+            <!-- ================= RECENT UPLOADS ================= -->
+
+            <div class="table-header" id="myUploadsSection">
+
+                <h3>My Uploads</h3>
+
+                <span id="uploadCount">
+                    Showing 0 Uploads
+                </span>
+
+            </div>
+
+            <!-- ================= SEARCH ================= -->
+
+            <div class="user-filter-box">
+
+                <div class="search-box">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="uploadSearch"
+                        placeholder="Search Notes, Quiz or PYQ...">
+
+                </div>
+
+                <select id="uploadFilter">
+
+                    <option value="">
+                        All Uploads
+                    </option>
+
+                    <option value="notes">
+                        Notes
+                    </option>
+
+                    <option value="quiz">
+                        Quiz
+                    </option>
+
+                    <option value="pyq">
+                        PYQ
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- ================= UPLOAD TABLE ================= -->
+
+            <div class="table-box">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Type</th>
+
+                            <th>Title</th>
+
+                            <th>Department</th>
+
+                            <th>Subject</th>
+
+                            <th>Upload Date</th>
+
+                            <th>Time</th>
+
+                            <th>Downloads</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="uploadsTable">
+
+                        <!-- JS Will Load Here -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- ================= NOTIFICATION POPUP ================= -->
+
+            <div id="notificationPopup" class="notification-popup">
+
+                <div class="notification-header">
+
+                    <h3>
+
+                        Notifications
+
+                    </h3>
+
+                    <button
+                        onclick="closeNotificationPopup()">
+
+                        ✕
+
+                    </button>
+
+                </div>
+
+                <div
+                    id="notificationList"
+                    class="notification-list">
+
+                    <div class="notification-item">
+
+                        No Notifications Available
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ================= LOGOUT POPUP ================= -->
+
+            <div
+                id="logoutPopupOverlay"
+                class="custom-popup-overlay">
+
+                <div class="custom-popup-box">
+
+                    <h2>
+
+                        Success ✅
+
+                    </h2>
+
+                    <p>
+
+                        Logged out successfully.
+
+                    </p>
+
+                    <div class="custom-popup-actions">
+
+                        <button
+                            id="logoutPopupOkBtn">
+
+                            OK
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="teacher-footer">
+
+        © 2026 Student Notesphere Teacher Dashboard
+
+    </footer>
+
+    <!-- ================= JS ================= -->
+
+    <script src="config.js"></script>
+
+    <script src="common.js"></script>
+
+    <script src="teacher.js"></script>
+
+</body>
+
+</html>

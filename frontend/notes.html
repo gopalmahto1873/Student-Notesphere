@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Student Notesphere</title>
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="notes.css">
+
+    <link rel="icon" href="logo.png">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>📚 Student Notesphere - Notes</h1>
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+    </header>
+
+    <nav>
+        
+        <ul class="nav-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="pyq.html">PYQ</a></li>
+            <li id="adminDashboardLink" style="display:none;">
+                <a href="admin.html">Dashboard</a>
+            </li>
+            <li id="teacherDashboardLink" style="display:none;">
+                <a href="teacher.html">Dashboard</a>
+            </li>
+        </ul>
+        <div class="nav-right">
+            <a href="login.html" id="loginLink">Login</a>
+
+            <div class="profile-menu" id="profileMenu" style="display:none;">
+
+                <span id="navUserName"></span>
+                <img src="logo.png" id="profileIcon" alt="Profile">
+
+                <div class="dropdown" id="dropdownMenu">
+                    <a href="profile.html">Profile</a>
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= TOP SEARCH ================= -->
+    <section class="top-search-section">
+        <h2 id="selectedTitle">All Notes</h2>
+
+        <input type="hidden" id="selectedCourse">
+        <input type="hidden" id="selectedDepartment">
+        <input type="hidden" id="selectedSubject">
+
+        <input 
+            type="text" 
+            id="searchBox" 
+            placeholder="Search by course, department, subject, unit, topic or title..."
+        >
+    </section>
+
+    <!-- ================= MAIN NOTES DASHBOARD ================= -->
+    <main class="notes-dashboard">
+
+        <!-- LEFT PANEL -->
+        <aside class="left-panel">
+
+            <section class="panel-card">
+                <h3>Select Course Type</h3>
+
+                <div class="small-card-box">
+                    <button class="mini-card" onclick="selectCourse('UG')">
+                        <strong>UG</strong>
+                        <span>Under Graduate</span>
+                    </button>
+
+                    <button class="mini-card" onclick="selectCourse('PG')">
+                        <strong>PG</strong>
+                        <span>Post Graduate</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="panel-card" id="departmentSection" style="display:none;">
+                <h3 id="departmentHeading">Select Department</h3>
+
+                <div class="small-card-box" id="departmentCards">
+                    <!-- Dynamic departments -->
+                </div>
+            </section>
+
+            <section class="panel-card" id="subjectSection" style="display:none;">
+                <h3 id="subjectHeading">Select Subject</h3>
+
+                <div class="small-card-box" id="subjectCards">
+                    <!-- Dynamic subjects -->
+                </div>
+            </section>
+
+
+        </aside>
+
+        <!-- MIDDLE PANEL -->
+        <section class="middle-panel">
+
+            <div class="upload-section">
+                <h2>Upload Notes</h2>
+
+                <div class="upload-box" id="uploadBox">
+                    <form id="uploadForm" onsubmit="return uploadNote(event)">
+
+                        <label>Course Type <span class="required">*</span></label>
+                        <select id="course" required>
+                            <option value="">Select Course</option>
+                            <option value="UG">UG</option>
+                            <option value="PG">PG</option>
+                        </select>
+
+                        <label>Department <span class="required">*</span></label>
+                        <input type="text" id="department" list="departmentOptions" placeholder="Enter or select department" required>
+                        <datalist id="departmentOptions"></datalist>
+
+                        <label>Subject <span class="required">*</span></label>
+                        <input type="text" id="subject" list="subjectOptions" placeholder="Enter or select subject" required>
+                        <datalist id="subjectOptions"></datalist>
+
+                        <label>Semester Optional</label>
+                        <select id="semester">
+                            <option value="">No Semester</option>
+                            <option value="Sem1">Semester 1</option>
+                            <option value="Sem2">Semester 2</option>
+                            <option value="Sem3">Semester 3</option>
+                            <option value="Sem4">Semester 4</option>
+                            <option value="Sem5">Semester 5</option>
+                            <option value="Sem6">Semester 6</option>
+                        </select>
+
+                        <label>Unit Optional</label>
+                        <input type="text" id="unit" list="unitOptions" placeholder="Enter or select unit">
+
+                        <datalist id="unitOptions">
+                            <option value="Unit 1">
+                            <option value="Unit 2">
+                            <option value="Unit 3">
+                            <option value="Unit 4">
+                            <option value="Unit 5">
+                        </datalist>
+
+                        <label>Topic Optional</label>
+                        <input type="text" id="topic" placeholder="Example: Introduction to Java">
+
+                        <label>Title <span class="required">*</span></label>
+                        <input type="text" id="title" placeholder="Enter note title" required>
+
+                        <label>Select File PDF / JPG / PNG / TXT <span class="required">*</span></label>
+                        <input type="file" id="file" accept=".pdf,.jpg,.jpeg,.png,.txt" required>
+
+                        <button type="submit">Upload</button>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="student-help-box" id="studentHelpBox">
+                <h2 id="middleSubjectHeading">Select Subject</h2>
+                    <div class="small-card-box" id="middleSubjectCards">
+                        <p>Select a department to view subjects.</p>
+                    </div>
+            </div>
+
+        </section>
+
+        <!-- RIGHT PANEL -->
+        <section class="right-panel">
+            <h2>Available Notes</h2>
+
+            <div class="notes-list" id="notesList">
+                <p>Please select UG or PG to view notes.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= EDIT NOTE POPUP ================= -->
+    <div id="editNoteOverlay" class="popup-overlay">
+
+        <div class="popup-box">
+
+            <h2>Edit Note</h2>
+
+            <input type="hidden" id="editNoteId">
+
+            <label>Course</label>
+            <select id="editCourse">
+                <option value="UG">UG</option>
+                <option value="PG">PG</option>
+            </select>
+
+            <label>Department</label>
+            <input type="text" id="editDepartment">
+
+            <label>Subject</label>
+            <input type="text" id="editSubject">
+
+            <label>Semester</label>
+            <select id="editSemester">
+                <option value="">No Semester</option>
+                <option value="Sem1">Semester 1</option>
+                <option value="Sem2">Semester 2</option>
+                <option value="Sem3">Semester 3</option>
+                <option value="Sem4">Semester 4</option>
+                <option value="Sem5">Semester 5</option>
+                <option value="Sem6">Semester 6</option>
+            </select>
+
+            <label>Title</label>
+            <input type="text" id="editTitle">
+
+            <div class="popup-buttons">
+                <button type="button" onclick="saveEditedNote()">Save</button>
+                <button type="button" onclick="closeEditNotePopup()">Cancel</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= UPLOAD SUCCESS POPUP ONLY ================= -->
+    <div id="uploadPopupOverlay" class="upload-popup-overlay">
+
+        <div class="upload-popup-box">
+
+            <h2 id="uploadPopupTitle">Success ✅</h2>
+
+            <p id="uploadPopupMessage">Uploaded successfully</p>
+
+            <button type="button" id="uploadPopupOkBtn">
+                OK
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= CUSTOM COMMON POPUP ================= -->
+    <div id="customPopupOverlay" class="custom-popup-overlay">
+
+        <div class="custom-popup-box">
+
+            <h2 id="customPopupTitle">Message</h2>
+            <p id="customPopupMessage">Popup message here</p>
+
+            <div class="custom-popup-actions">
+
+                <button type="button" id="customPopupCancelBtn">
+                    Cancel
+                </button>
+
+                <button type="button" id="customPopupOkBtn" onclick="closeCustomPopup()">
+                    OK
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= COMMON LOADER ================= -->
+    <div id="commonLoader" class="common-loader-overlay">
+
+        <div class="common-loader-box">
+
+            <div class="loader-spinner"></div>
+
+            <p id="loaderText">Loading...</p>
+
+        </div>
+
+    </div>
+
+    <div id="logoutPopupOverlay" class="custom-popup-overlay">
+    <div class="custom-popup-box">
+        <h2 id="logoutPopupTitle">Success ✅</h2>
+        <p id="logoutPopupMessage">Logged out successfully</p>
+
+        <div class="custom-popup-actions">
+            <button type="button" id="logoutPopupOkBtn">OK</button>
+        </div>
+    </div>
+</div>
+
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    <script src="notes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- ================= META ================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Student Registration - Student Notesphere</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="register.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+        <div class="logo-title">
+            <img src="logo.png" alt="Student Notesphere Logo">
+            <h1>Student Notesphere - Registration</h1>
+        </div>
+
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+
+    </header>
+
+    <nav>
+    <ul class="nav-left">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="pyq.html">PYQ</a></li>
+    </ul>
+
+    <div class="nav-right">
+        <a href="login.html" id="loginLink">Login</a>
+    </div>
+</nav>
+
+
+    <!-- ================= REGISTRATION SECTION ================= -->
+    <div class="register-section">
+
+        <div class="register-container">
+
+            <h2>Create Your Account</h2>
+            <p class="form-subtitle">
+                Register as a Student or Teacher to access Student Notesphere.
+            </p>
+
+            <!-- Registration Form -->
+            <form id="registerForm" enctype="multipart/form-data" onsubmit="return registerUser(event)">
+
+                <h3 class="form-section-title">Name Details</h3>
+
+                <div class="register-grid three-col">
+                    <div class="input-box">
+                        <label>First Name <span class="required">*</span></label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Middle Name</label>
+                        <input type="text" id="middleName" name="middleName" placeholder="Enter middle name">
+                    </div>
+
+                    <div class="input-box">
+                        <label>Last Name </label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Enter last name">
+                    </div>
+                </div>
+
+                <h3 class="form-section-title">Academic Details</h3>
+
+                <div class="register-grid three-col">
+                    <!-- Role Selection -->
+                    <div class="input-box">
+                        <label>Role <span class="required">*</span></label>
+
+                        <div class="radio-group">
+
+                            <label>
+                                <input type="radio" name="role" value="student">
+                                Student
+                            </label>
+
+                            <label>
+                                <input type="radio" name="role" value="teacher">
+                                Teacher
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Date of Birth <span class="required">*</span></label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Profile Photo</label>
+                        <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*" >
+                    </div>
+                </div>
+
+                    <div id="studentTypeContainer" style="display: none;">
+
+                        <div class="register-grid one-col">
+
+                            <div class="input-box">
+
+                                <label>Student Type <span class="required">*</span></label>
+
+                                <div class="radio-group">
+
+                                    <label>
+                                        <input type="radio" name="studentType" value="Regular" required>
+                                        Regular
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" name="studentType" value="Ex-Student" required>
+                                        Ex-Student
+                                    </label>
+
+                                </div>
+
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <!-- Regular Student Details -->
+
+                    <div id="regularStudentSection" style="display: none;">
+
+                        <h3 class="form-section-title"> Regular Student Details </h3>
+                        <div class="register-grid three-col">
+
+                            <div class="input-box">
+                                <label>Session <span class="required">*</span></label>
+
+                                <input type="text" id="session" name="session" placeholder="Example: 2023-2026" pattern="^[0-9]{4}-[0-9]{4}$" title="Session must be in format 2023-2026" maxlength="9" required>
+                            </div>
+
+
+                            <div class="input-box">
+
+                                <label>University / College <span class="required">*</span></label>
+
+                                <input type="text" id="university" name="university" placeholder="Enter your University / College" required>
+
+                            </div>
+
+
+                            <div class="input-box">
+
+                                <label>Department <span class="required">*</span></label>
+
+                                <select id="department" name="department" required>
+
+                                    <option value="">Select Department</option>
+                                    <option>BCA</option>
+                                    <option>BBA</option>
+                                    <option>MCA</option>
+                                    <option>MBA</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- Ex Student Details -->
+                    <div id="exStudentSection" style="display:none;">
+
+                        <h3 class="form-section-title"> Ex Student Details </h3>
+
+
+                        <div class="register-grid four-col">
+
+
+                            <div class="input-box">
+
+                                <label>Last Session<span class="required">*</span></label>
+
+                                <input type="text" id="lastSession" name="lastSession" placeholder="Example: 2020-2023" required>
+
+                            </div>
+
+
+                            <div class="input-box">
+
+                                <label>Last University / College<span class="required">*</span></label>
+
+                                <input type="text" id="lastUniversity" name="lastUniversity" placeholder="Enter previous University/college" required>
+
+                            </div>
+
+
+                            <div class="input-box">
+
+                                <label>Passing Year<span class="required">*</span></label>
+
+                                <input type="number" id="passingYear" name="passingYear" placeholder="Example: 2023" required min="1900" max="2100">
+
+                            </div>
+
+
+                            <div class="input-box">
+
+                                <label>Current Status</label>
+
+                                <select id="currentStatus" name="currentStatus">
+
+                                    <option value="">Select</option>
+
+                                    <option>Job</option>
+
+                                    <option>Higher Studies</option>
+
+                                    <option>Business</option>
+
+                                </select>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                
+
+                <!-- ================= Teacher Details ================= -->
+
+                <div id="teacherSection" style="display:none;">
+
+                    <h3 class="form-section-title">Teacher Details</h3>
+
+                    <div class="teacher-note">
+                        <p>
+                            <strong>Note:</strong> Teacher accounts require administrator approval before login access is granted.
+                        </p>
+                    </div>
+
+                    <div class="register-grid three-col">
+
+                        <div class="input-box">
+
+                            <label>Qualification<span class="required">*</span></label>
+
+                            <select id="qualification" name="qualification" required>
+
+                                <option value="">Select Qualification</option>
+
+                                <option>B.Ed</option>
+                                <option>M.Ed</option>
+                                <option>BCA</option>
+                                <option>MCA</option>
+                                <option>B.Sc</option>
+                                <option>M.Sc</option>
+                                <option>B.Tech</option>
+                                <option>M.Tech</option>
+                                <option>PhD</option>
+                                <option>NET Qualified</option>
+
+                                <option>Other</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="input-box">
+
+                            <label>Subject <span class="required">*</span></label>
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="Example: Java, Python, DBMS">
+
+                        </div>
+
+                        <div class="input-box">
+
+                            <label>Experience (Years) <span class="required">*</span></label>
+
+                            <input
+                                type="number"
+                                id="experience"
+                                name="experience"
+                                min="0"
+                                max="50"
+                                placeholder="Example: 5">
+
+                        </div>
+
+                        <div class="input-box">
+
+                            <label>Current Institution <span class="required">*</span></label>
+
+                            <input
+                                type="text"
+                                id="institution"
+                                name="institution"
+                                placeholder="Enter institution name">
+
+                        </div>
+
+                        <div class="input-box">
+
+                            <label>Designation</label>
+
+                            <input
+                                type="text"
+                                id="designation"
+                                name="designation"
+                                placeholder="Assistant Professor, Lecturer">
+
+                        </div>
+
+                        <div class="input-box">
+
+                            <label>ID Proof <span class="required">*</span></label>
+
+                            <input
+                                type="file"
+                                id="idProof"
+                                name="idProof"
+                                accept=".pdf,.jpg,.jpeg,.png">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3 class="form-section-title">Login Details</h3>
+
+                <div class="register-grid two-col">
+                    <div class="input-box">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="Enter email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Confirm Email <span class="required">*</span></label>
+                        <input type="email" id="confirmEmail" placeholder="Confirm email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Password <span class="required">*</span></label>
+                        <input type="password" id="password" name="password" placeholder="Enter password" required minlength="8"
+                            pattern="^(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$"
+                            title="Minimum 8 characters, one uppercase letter and one special character">
+                        <span class="show-btn" onclick="togglePassword()">Show</span>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Confirm Password <span class="required">*</span></label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+                    </div>
+                </div>
+
+                <div class="checkbox-box">
+                    <input type="checkbox" id="declaration" required>
+                    <label>I confirm that the above details are correct.</label>
+                </div>
+
+                <div id="registerMessage" style="display:none;"></div>
+
+                <button type="submit" class="register-btn register-submit-btn">Register</button>
+
+                <p class="login-text">Already have an account? <a href="login.html">Login</a></p>
+
+            </form>
+
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    <script src="register.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+/* ================= GLOBAL RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ================= BODY ================= */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #d7d7d7, #9e9e9e);
+}
+
+/* ================= HEADER ================= */
+.header{
+    background: radial-gradient(circle, rgba(32,29,61,1) 0%, rgba(69,69,82,1) 50%, rgba(118,122,122,1) 100%);
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo-title{
+    display:flex;
+    align-items:center;
+}
+
+.logo-title img{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+    margin-right:12px;
+    border-radius:50%;
+}
+
+.logo-title h1{
+    font-size:28px;
+    color:wheat;
+}
+
+/* ================= BACK BUTTON ================= */
+.back-btn{
+    text-decoration:none;
+    background:#555;
+    color:white;
+    padding:8px 15px;
+    border-radius:5px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#222;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    background:grey;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    padding:10px;
+    list-style:none;
+}
+
+nav ul li{
+    margin:0 10px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:antiquewhite;
+    padding:6px 10px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    background-color:rgb(38,43,43);
+    color:rgb(216,216,203);
+    border-radius:4px;
+}
+
+/* ================= MAIN CONTAINER ================= */
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:80vh;
+    padding:25px;
+}
+
+/* ================= FORM BOX ================= */
+.form-box{
+    background:#fff;
+    padding:38px;
+    width:380px;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.22);
+    text-align:center;
+}
+
+.form-box h2{
+    margin-bottom:22px;
+    color:#333;
+    font-size:23px;
+}
+
+/* ================= INPUTS ================= */
+.form-box input{
+    width:100%;
+    padding:11px;
+    margin-bottom:14px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    outline:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.form-box input:focus{
+    border-color:#333;
+    box-shadow:0 0 5px rgba(0,0,0,0.18);
+}
+
+/* ================= BUTTONS ================= */
+.form-box button{
+    width:100%;
+    padding:12px;
+    margin-bottom:14px;
+    background:linear-gradient(to right,#1c1c1d,#2f293d,#333);
+    border:none;
+    border-radius:6px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.form-box button:hover{
+    opacity:0.88;
+    transform:scale(1.02);
+}
+
+/* Disabled buttons */
+.form-box button:disabled,
+#resendBtn:disabled{
+    background:#777;
+    cursor:not-allowed;
+    opacity:0.7;
+    transform:none;
+}
+
+/* ================= TIMER ================= */
+.timer-text,
+#otpTimer{
+    text-align:center;
+    font-size:14px;
+    color:#222;
+    background:#f1f1f1;
+    padding:8px;
+    border-radius:6px;
+    margin:5px 0 14px;
+}
+
+/* ================= NOTE TEXT ================= */
+.note{
+    text-align:center;
+    font-size:13px;
+    color:#666;
+    margin-top:8px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:600px){
+    .header{
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
+    }
+
+    .logo-title{
+        margin-bottom:5px;
+    }
+
+    .logo-title h1{
+        font-size:24px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+        gap:6px;
+    }
+
+    .form-box{
+        width:92%;
+        padding:25px;
+    }
+}

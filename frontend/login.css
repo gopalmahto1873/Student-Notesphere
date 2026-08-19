@@ -1,0 +1,161 @@
+/* ================= LOGIN SECTION ================= */
+
+.login-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:85vh;
+    padding:20px;
+}
+
+/* ================= LOGIN BOX ================= */
+
+.login-container{
+    width:350px;
+    max-width:95%;
+    padding:40px;
+    text-align:center;
+    background:linear-gradient(to left,#536976,#bbd2c5);
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+.login-container h2{
+    margin-bottom:25px;
+    color:#333;
+}
+
+/* ================= INPUT FIELDS ================= */
+
+.input-box{
+    position:relative;
+    margin-bottom:20px;
+    text-align:left;
+}
+
+.input-box label{
+    font-weight:bold;
+    font-size:14px;
+}
+
+.input-box input{
+    width:100%;
+    height:44px;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.input-box input:focus{
+    border-color:#333;
+    box-shadow:0 0 6px rgba(0,0,0,0.2);
+}
+
+/* ================= SHOW / HIDE PASSWORD ================= */
+
+.show-btn{
+    position:absolute;
+    right:10px;
+    top:38px;
+    cursor:pointer;
+    font-size:13px;
+    color:#171527;
+}
+
+/* ================= LOGIN BUTTON ================= */
+
+.login-btn{
+    width:100%;
+    padding:12px;
+    background:linear-gradient(to right,#1c1c1d,#2f293d,#333);
+    border:none;
+    border-radius:6px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-btn:hover{
+    opacity:0.85;
+    transform:scale(1.02);
+}
+
+/* ================= LINKS ================= */
+
+.login-container a{
+    color:#3b0764;
+    font-weight:500;
+}
+
+/* ================= GOOGLE BUTTON OPTIONAL ================= */
+
+.google-btn{
+    width:100%;
+    padding:11px;
+    margin-top:15px;
+    border:1px solid #999;
+    border-radius:6px;
+    background:white;
+    cursor:pointer;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media(max-width:600px){
+
+    .login-section{
+        min-height:auto;
+        padding:35px 15px;
+        align-items:flex-start;
+    }
+
+    .login-container{
+        width:100%;
+        padding:25px;
+    }
+
+    .login-container h2{
+        font-size:24px;
+    }
+
+    .input-box input{
+        height:43px;
+    }
+
+    .show-btn{
+        top:38px;
+    }
+}
+.login-btn:disabled{
+
+    cursor:not-allowed;
+    opacity:.7;
+
+}
+
+.btn-spinner{
+
+    width:16px;
+    height:16px;
+    border:2px solid white;
+    border-top:2px solid transparent;
+    border-radius:50%;
+    display:inline-block;
+    margin-right:8px;
+    animation:spin .8s linear infinite;
+    vertical-align:middle;
+
+}
+
+@keyframes spin{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}

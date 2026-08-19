@@ -1,0 +1,419 @@
+/* ================= COMMON SECTIONS ================= */
+
+.pyq-search,
+.upload-section,
+.pyq-result-section{
+    width:90%;
+    margin:30px auto;
+    background:linear-gradient(to left,#536976,#bbd2c5);
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.18);
+}
+
+.pyq-search h2,
+.upload-section h2,
+.pyq-result-section h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#201d3d;
+}
+
+/* ================= SEARCH GRID ================= */
+
+.search-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:14px;
+}
+
+.search-grid input,
+.search-grid select,
+.search-grid button{
+    padding:11px;
+    border-radius:7px;
+    border:1px solid #aaa;
+    font-size:14px;
+}
+
+.search-grid button{
+    background:linear-gradient(to right,#1c1c1d,#2f293d,#333);
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.search-grid button:hover{
+    opacity:0.88;
+}
+
+/* ================= UPLOAD FORM ================= */
+
+.upload-section{
+    width:88%;
+    padding:35px;
+    border-radius:16px;
+}
+
+.upload-section h2{
+    margin-bottom:28px;
+    color:#171527;
+}
+
+.pyq-upload-form{
+    width:100%;
+}
+
+.upload-row{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+/* ================= FIELD BOX ================= */
+
+.field-box{
+    display:flex;
+    flex-direction:column;
+}
+
+.field-box label,
+.description-box label{
+    margin-bottom:6px;
+    font-size:14px;
+    font-weight:bold;
+    color:#171527;
+}
+
+.required{
+    color:red;
+}
+
+.upload-row input,
+.upload-row select,
+.field-box input,
+.field-box select{
+    width:100%;
+    height:46px;
+    padding:10px 12px;
+    border-radius:7px;
+    border:1px solid #aaa;
+    font-size:14px;
+    background:white;
+    outline:none;
+}
+
+/* ================= DESCRIPTION ================= */
+
+.description-box{
+    margin-top:18px;
+}
+
+.description-box textarea,
+#uploadDescription{
+    width:100%;
+    min-height:100px;
+    padding:12px;
+    border-radius:7px;
+    border:1px solid #aaa;
+    resize:vertical;
+    outline:none;
+}
+
+/* ================= UPLOAD BUTTON ================= */
+
+.upload-pyq-btn{
+    width:260px;
+    display:block;
+    margin:22px auto 0;
+    padding:13px;
+    border:none;
+    border-radius:8px;
+    background:linear-gradient(to right,#1c1c1d,#2f293d,#333);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.upload-pyq-btn:hover{
+    background:linear-gradient(to right,#575758,#584f6d,#4c4c4c);
+}
+
+/* ================= PYQ LIST ================= */
+
+.pyq-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+}
+
+.pyq-card{
+    background:#f8f8f8;
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 6px 16px rgba(0,0,0,0.12);
+    transition:0.3s;
+}
+
+.pyq-card:hover{
+    transform:translateY(-4px);
+}
+
+.pyq-card h3{
+    margin-bottom:10px;
+    color:#201d3d;
+}
+
+.pyq-card p{
+    margin:6px 0;
+    font-size:14px;
+}
+
+.pyq-card a{
+    display:inline-block;
+    margin-top:12px;
+    background:#1f2937;
+    color:white;
+    padding:8px 13px;
+    border-radius:7px;
+    text-decoration:none;
+}
+
+.pyq-card a:hover{
+    background:#111827;
+}
+
+/* ================= DELETE BUTTON ================= */
+
+.delete-pyq-btn{
+    margin-left:10px;
+    margin-top:12px;
+    background:#dc2626;
+    color:white;
+    padding:8px 13px;
+    border:none;
+    border-radius:7px;
+    cursor:pointer;
+}
+
+.delete-pyq-btn:hover{
+    background:#632121;
+}
+
+/* ================= TABLET RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .upload-row{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .pyq-search,
+    .upload-section,
+    .pyq-result-section{
+        width:94%;
+        padding:20px;
+        margin:20px auto;
+    }
+
+    .search-grid,
+    .upload-row{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .upload-pyq-btn{
+        width:100%;
+    }
+
+    .pyq-list{
+        grid-template-columns:1fr;
+    }
+
+    .pyq-card{
+        padding:15px;
+    }
+
+    .pyq-card a,
+    .delete-pyq-btn{
+        width:100%;
+        text-align:center;
+        margin-left:0;
+    }
+}
+
+.pyq-actions{
+    display:flex;
+    gap:12px;
+    margin-top:15px;
+    align-items:center;
+}
+
+.pyq-actions a,
+.pyq-actions button{
+    width:140px;
+    height:45px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:none;
+    border-radius:8px;
+
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    text-decoration:none;
+
+    box-sizing:border-box;
+}
+
+.view-btn{
+    background:#1f2937;
+    color:#fff;
+}
+
+.download-btn{
+    background:#198754;
+    color:#fff;
+    margin-top: 17px;
+}
+
+.delete-pyq-btn{
+    background:#dc3545;
+    color:#fff;
+}
+
+/* ================= IMPROVED TABLET ================= */
+
+@media (max-width: 992px){
+
+    .upload-row{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .search-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .upload-pyq-btn{
+        width:220px;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+    .pyq-search,
+    .upload-section,
+    .pyq-result-section{
+        width:95%;
+        padding:18px;
+        margin:18px auto;
+    }
+
+    .pyq-search h2,
+    .upload-section h2,
+    .pyq-result-section h2{
+        font-size:28px;
+    }
+
+    .search-grid,
+    .upload-row{
+        grid-template-columns:1fr;
+        gap:14px;
+    }
+
+    .upload-pyq-btn{
+        width:100%;
+        font-size:16px;
+    }
+
+    .pyq-list{
+        grid-template-columns:1fr;
+    }
+
+    .pyq-card{
+        padding:16px;
+    }
+
+    .pyq-card h3{
+        font-size:24px;
+    }
+
+    .pyq-card p{
+        font-size:15px;
+    }
+
+    .pyq-actions{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .pyq-actions a,
+    .pyq-actions button{
+        width:100%;
+        height:46px;
+        margin:0;
+        font-size:15px;
+    }
+
+    .download-btn,
+    .delete-pyq-btn{
+        margin-top:0;
+    }
+
+}
+
+
+/* ================= EXTRA SMALL MOBILE ================= */
+
+@media (max-width:480px){
+
+    .pyq-search,
+    .upload-section,
+    .pyq-result-section{
+        width:96%;
+        padding:14px;
+    }
+
+    .pyq-search h2,
+    .upload-section h2,
+    .pyq-result-section h2{
+        font-size:24px;
+    }
+
+    .pyq-card{
+        padding:14px;
+    }
+
+    .pyq-card h3{
+        font-size:20px;
+    }
+
+    .pyq-card p{
+        font-size:14px;
+    }
+
+    .search-grid input,
+    .search-grid select,
+    .upload-row input,
+    .upload-row select{
+        height:44px;
+        font-size:14px;
+    }
+
+    .description-box textarea{
+        min-height:90px;
+    }
+
+}

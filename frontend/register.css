@@ -1,0 +1,404 @@
+/* ================= GLOBAL RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* ================= HEADER ================= */
+.header{
+    background:radial-gradient(circle,rgba(32,29,61,1) 0%,rgba(69,69,82,1) 50%,rgba(118,122,122,1) 100%);
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo-title{
+    display:flex;
+    align-items:center;
+}
+
+.logo-title img{
+    width:50px;
+    margin-right:10px;
+}
+
+.back-btn{
+    text-decoration:none;
+    background:#555;
+    color:white;
+    padding:8px 15px;
+    border-radius:5px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#222;
+}
+
+/* ================= REGISTER SECTION ================= */
+.register-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:90vh;
+    padding:20px;
+}
+
+/* ================= REGISTER BOX ================= */
+.register-container{
+    width:900px;
+    max-width:95%;
+    padding:35px;
+    background:linear-gradient(to left,#536976,#bbd2c5);
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+.register-container h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#333;
+}
+
+/* ================= FORM SECTION TITLE ================= */
+.form-section-title{
+    margin:25px 0 15px;
+    color:#1f1c24;
+    font-size:20px;
+    border-left:5px solid #1f1c24;
+    padding-left:10px;
+}
+
+/* ================= FORM GRID ================= */
+.register-grid{
+    display:grid;
+    gap:18px 22px;
+    margin-bottom:10px;
+}
+
+.three-col{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.two-col{
+    grid-template-columns:repeat(2,1fr);
+}
+
+/* ================= INPUT FIELD ================= */
+.input-box{
+    position:relative;
+    margin-bottom:15px;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.input-box input,
+.input-box select{
+    width:100%;
+    height:45px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    outline:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.input-box input:focus,
+.input-box select:focus{
+    border-color:#333;
+    box-shadow:0 0 6px rgba(0,0,0,0.2);
+}
+
+.input-box input[type="file"]{
+    background:white;
+    padding:8px;
+}
+
+.input-box input[type="radio"]{
+    width:auto;
+    margin-right:5px;
+}
+
+/* ================= REQUIRED STAR ================= */
+.required{
+    color:red;
+    font-weight:bold;
+}
+
+/* ================= RADIO GROUP ================= */
+.radio-group{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-top:12px;
+    min-height:44px;
+}
+
+/* ================= SHOW PASSWORD ================= */
+.show-btn{
+    position:absolute;
+    right:10px;
+    top:37px;
+    cursor:pointer;
+    font-size:13px;
+    color:#171527;
+}
+
+/* ================= CHECKBOX ================= */
+.checkbox-box{
+    margin-top:10px;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.checkbox-box input{
+    margin-right:5px;
+}
+
+/* ================= BUTTON ================= */
+.register-btn{
+    width:100%;
+    padding:13px;
+    margin-top:18px;
+    background:linear-gradient(to right,#1c1c1d,#2f293d,#333);
+    border:none;
+    border-radius:8px;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.register-btn:hover{
+    opacity:0.85;
+    transform:scale(1.02);
+}
+
+.register-submit-btn{
+    width:300px;
+    display:block;
+    margin:22px auto 8px;
+}
+
+.login-text{
+    text-align:center;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media(max-width:768px){
+
+    .header{
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
+    }
+
+    .logo-title{
+        margin-bottom:10px;
+    }
+
+    .register-section{
+        padding:15px;
+        align-items:flex-start;
+    }
+
+    .register-container{
+        width:92%;
+        padding:22px;
+        border-radius:12px;
+    }
+
+    .register-container h2{
+        font-size:24px;
+    }
+
+    .three-col,
+    .two-col{
+        grid-template-columns:1fr;
+    }
+
+    .form-section-title{
+        font-size:18px;
+        margin:20px 0 12px;
+    }
+
+    .input-box label{
+        font-size:13px;
+    }
+
+    .input-box input,
+    .input-box select{
+        height:44px;
+        font-size:14px;
+    }
+
+    .show-btn{
+        top:39px;
+        font-size:12px;
+    }
+
+    .radio-group{
+        flex-wrap:wrap;
+        height:auto;
+        gap:10px;
+    }
+
+    .register-submit-btn{
+        width:100%;
+        font-size:16px;
+    }
+
+    .checkbox-box{
+        font-size:12px;
+    }
+}
+
+#registerMessage{
+    margin: 15px 0;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.success-msg{
+    background:#d4edda;
+    color:#155724;
+    padding:12px;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.error-msg{
+    background:#f8d7da;
+    color:#721c24;
+    padding:12px;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+/* ================= EX STUDENT POPUP ================= */
+
+.popup-overlay{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+
+.popup-box{
+
+    width:450px;
+    max-width:90%;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+
+}
+
+
+.popup-box h3{
+
+    text-align:center;
+    margin-bottom:15px;
+    color:#333;
+
+}
+
+
+.popup-box p{
+
+    font-size:14px;
+    line-height:1.5;
+    color:#555;
+    margin-bottom:15px;
+
+}
+
+
+.popup-box input,
+.popup-box select{
+
+    width:100%;
+    height:42px;
+    margin-bottom:12px;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:5px;
+
+}
+
+
+.popup-btn{
+
+    width:100%;
+    padding:12px;
+    background:#222;
+    color:white;
+    border:none;
+    border-radius:7px;
+    cursor:pointer;
+
+}
+
+
+.popup-btn:hover{
+
+    opacity:0.8;
+
+}
+
+#regularStudentSection{
+    grid-column:1 / -1;
+    width:100%;
+}
+
+#exStudentSection{
+    grid-column:1 / -1;
+    width:100%;
+}
+
+.four-col{
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media(max-width:900px){
+
+    .four-col{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .four-col{
+        grid-template-columns:1fr;
+    }
+
+}

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Student Notesphere</title>
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>📝 Student Notesphere - Quiz</h1>
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+    </header>
+
+    <nav>
+
+        <ul class="nav-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="pyq.html">PYQ</a></li>
+            <li id="adminDashboardLink" style="display:none;">
+                <a href="admin.html">Dashboard</a>
+            </li>
+            <li id="teacherDashboardLink" style="display:none;">
+                <a href="teacher.html">Dashboard</a>
+            </li>
+        </ul>
+
+        <div class="nav-right">
+
+            <a href="login.html" id="loginLink">Login</a>
+
+            <div class="profile-menu" id="profileMenu" style="display:none;">
+
+                <span id="navUserName"></span>
+
+                <img src="logo.png"
+                    id="profileIcon"
+                    alt="Profile">
+
+                <div class="dropdown" id="dropdownMenu">
+
+                    <a href="profile.html">Profile</a>
+
+                    <a href="#" id="logoutBtn">Logout</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <section class="quiz-search-section" id="availableQuizSection">
+        <input
+            type="text"
+            id="commonQuizSearch"
+            placeholder="🔍 Search quiz by course, department, subject, unit, topic or question..."
+        >
+
+        <div id="commonQuizResults" class="common-quiz-results"></div>
+    </section>
+
+    <main class="quiz-dashboard" id="quizDashboard">
+
+        <section class="quiz-setup">
+
+            <h2>Custom Practice Quiz</h2>
+            <p>Select course, department, subject and units to start quiz.</p>
+
+            <div class="setup-box">
+
+                <label>Course Type</label>
+                <select id="course">
+                    <option value="">Select Course</option>
+                    <option value="UG">UG</option>
+                    <option value="PG">PG</option>
+                </select>
+
+                <label>Department</label>
+                <select id="department">
+                    <option value="">Select Department</option>
+                </select>
+
+                <label>Subject</label>
+                <select id="subject">
+                    <option value="">Select Subject</option>
+                </select>
+
+                <label>Quiz Scope</label>
+                <select id="quizScope">
+                    <option value="whole">Whole Subject</option>
+                    <option value="units">Selected Units</option>
+                    <option value="topics">Selected Topics</option>
+                </select>
+
+                <div id="unitBox" style="display:none;">
+                    <label>Select Units</label>
+                    <div id="unitList" class="unit-list">
+                        <!-- Units checkboxes here -->
+                    </div>
+                </div>
+
+                <div id="topicBox" style="display:none;">
+                    <label>Select Topics</label>
+                    <div id="topicList" class="unit-list"></div>
+                </div>
+
+                <label>Number of Questions</label>
+                <select id="numberOfQuestions">
+                    <option value="5">5 Questions</option>
+                    <option value="10" selected>10 Questions</option>
+                    <option value="15">15 Questions</option>
+                    <option value="20">20 Questions</option>
+                </select>
+
+                <button onclick="startQuiz()">Start Quiz</button>
+
+                
+                
+            </div>
+
+        </section>
+
+        <!-- ================= ADMIN / TEACHER ONLY ================= -->
+        <section class="quiz-admin-section" id="addQuizSection" style="display:none;">
+
+            <h2>Add Quiz Question</h2>
+
+            <form id="quizForm" class="quiz-form">
+
+                <label>Course<span class="required">*</span></label>
+                <select id="addCourse" required>
+                    <option value="">Select Course</option>
+                    <option value="UG">UG</option>
+                    <option value="PG">PG</option>
+                </select>
+
+                <label>Department<span class="required">*</span></label>
+                <input type="text" id="addDepartment" list="addDepartmentOptions" required>
+                <datalist id="addDepartmentOptions"></datalist>
+
+                <label>Subject<span class="required">*</span></label>
+                <input type="text" id="addSubject" list="addSubjectOptions" required>
+                <datalist id="addSubjectOptions"></datalist>
+
+                <label>Unit<span class="required">*</span></label>
+                <input type="text" id="addUnit" required>
+
+                <label>Topic (Optional)</label>
+                <input type="text" id="addTopic" placeholder="Enter topic e.g. ACID Properties">
+
+                <!-- ================= QUIZ SETTINGS ================= -->
+
+                <label>Duration Minutes <span class="required">*</span></label>
+                <input
+                    type="number"
+                    id="durationMinutes"
+                    min="1"
+                    placeholder="Example: 30"
+                    required
+                >
+
+                <label>Marks Per Question <span class="required">*</span></label>
+                <input
+                    type="number"
+                    id="marksPerQuestion"
+                    min="1"
+                    placeholder="Example: 4"
+                    required
+                >
+
+                <label>Negative Marks <span class="required">*</span></label>
+                <input
+                    type="number"
+                    id="negativeMarks"
+                    min="0"
+                    step="0.25"
+                    placeholder="Example: 1 or 0.25"
+                    required
+                >
+
+                <label>Quiz Instructions</label>
+                <textarea
+                    id="quizInstructions"
+                    placeholder="Example:
+                1. Do not refresh page
+                2. Calculator not allowed
+                3. Submit before timer ends"
+                ></textarea>
+
+                <label>Question<span class="required">*</span></label>
+                <textarea id="addQuestion" required></textarea>
+
+                <label>Option 1<span class="required">*</span></label>
+                <input type="text" id="opt1" required>
+
+                <label>Option 2<span class="required">*</span></label>
+                <input type="text" id="opt2" required>
+
+                <label>Option 3<span class="required">*</span></label>
+                <input type="text" id="opt3" required>
+
+                <label>Option 4<span class="required">*</span></label>
+                <input type="text" id="opt4" required>
+
+                <label>Correct Answer<span class="required">*</span></label>
+                <select id="addCorrectAnswer" required>
+                    <option value="">Select Correct Answer</option>
+                </select>
+
+                <label>Explanation Optional</label>
+                <textarea id="addExplanation"></textarea>
+
+                <div class="quiz-form-actions">
+
+                    <button type="submit" id="addQuestionBtn">
+                        + Add Another Question
+                    </button>
+
+                    <button type="button" id="finishQuizSetBtn">
+                        Finish Quiz Set
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <section class="quiz-section" id="quizSection" style="display:none;">
+
+            <div class="quiz-top-bar">
+
+                <h2 id="quizTitle">Quiz</h2>
+
+                <div id="timerBox">⏰ 00:00</div>
+
+            </div>
+
+            <div class="exam-layout">
+
+                <div id="questionsContainer"></div>
+
+                <div class="question-palette-box">
+                    <h3>Question Palette</h3>
+
+                    <div class="palette-summary">
+                        <p>Total Questions: <span id="totalCount">0</span></p>
+                        <p>Answered: <span id="answeredCount">0</span></p>
+                        <p>Review: <span id="reviewCount">0</span></p>
+                        <p>Answered + Review: <span id="answeredReviewCount">0</span></p>
+                        <p>Not Attempted: <span id="notAttemptedCount">0</span></p>
+                    </div>
+
+
+                    <div id="questionPalette"></div>
+                </div>
+
+            </div>
+
+            <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+        </section>
+
+        <section class="result-section" id="resultSection" style="display:none;">
+            <h2>Quiz Result</h2>
+            <div id="resultBox"></div>
+        </section>
+
+        <section class="quiz-admin-section" id="manageQuizSection" style="display:none;">
+
+        <h2>Manage Quiz Questions</h2>
+        <p>Admin can manage all questions. Teacher can manage only their own questions.</p>
+
+        <div id="quizList" class="quiz-list">
+            <!-- Quiz questions will load here -->
+        </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= EDIT QUIZ POPUP ================= -->
+    <div id="editPopup" class="popup-overlay" style="display:none;">
+
+        <div class="popup-box">
+
+            <h2>Edit Quiz Question</h2>
+
+            <input type="hidden" id="editQuizSetId">
+            <input type="hidden" id="editQuestionId">
+
+            <label>Question</label>
+            <textarea id="editQuestion"></textarea>
+
+            <label>Option 1</label>
+            <input type="text" id="editOpt1">
+
+            <label>Option 2</label>
+            <input type="text" id="editOpt2">
+
+            <label>Option 3</label>
+            <input type="text" id="editOpt3">
+
+            <label>Option 4</label>
+            <input type="text" id="editOpt4">
+
+            <label>Correct Answer</label>
+            <select id="editCorrect"></select>
+
+            <label>Explanation</label>
+            <textarea id="editExplanation"></textarea>
+
+            <div class="popup-buttons">
+                <button onclick="updateQuiz()">Save</button>
+                <button onclick="closePopup()">Cancel</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= CUSTOM COMMON POPUP ================= -->
+    <div id="customPopupOverlay" class="custom-popup-overlay">
+
+        <div class="custom-popup-box">
+
+            <h2 id="customPopupTitle">Message</h2>
+            <p id="customPopupMessage">Popup message here</p>
+
+            <div class="custom-popup-actions">
+
+                <button type="button" id="customPopupCancelBtn">
+                    Cancel
+                </button>
+
+                <button type="button" id="customPopupOkBtn">
+                    OK
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= COMMON LOADER ================= -->
+    <div id="commonLoader" class="common-loader-overlay">
+
+        <div class="common-loader-box">
+
+            <div class="loader-spinner"></div>
+
+            <p id="loaderText">Loading...</p>
+
+        </div>
+
+    </div>
+
+    <div id="logoutPopupOverlay" class="custom-popup-overlay">
+        <div class="custom-popup-box">
+            <h2 id="logoutPopupTitle">Success ✅</h2>
+            <p id="logoutPopupMessage">Logged out successfully</p>
+
+            <div class="custom-popup-actions">
+                <button type="button" id="logoutPopupOkBtn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= QUIZ INSTRUCTION POPUP ================= -->
+
+    <div id="instructionPopup" class="instruction-popup">
+
+        <div class="instruction-box">
+
+            <h2>Quiz Instructions</h2>
+
+            <div id="instructionText"></div>
+
+            <div id="quizMetaText"></div>
+
+            <button id="startQuizAfterInstructionBtn" onclick="beginQuizAfterInstruction()"> Start Quiz </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= EDIT QUIZ SETTINGS POPUP ================= -->
+
+    <div id="settingsPopup" class="popup-overlay" style="display:none;">
+
+        <div class="popup-box">
+
+            <h2>Edit Quiz Settings</h2>
+
+            <input type="hidden" id="settingsQuizSetId">
+
+            <label> Duration Minutes </label>
+
+            <input type="number" id="editDurationMinutes" min="1" >
+
+            <label> Marks Per Question</label>
+
+            <input type="number" id="editMarksPerQuestion" min="1" >
+
+            <label> Negative Marks </label>
+
+            <input type="number" id="editNegativeMarks" min="0" step="0.25" >
+
+            <label>Instructions</label>
+
+            <textarea id="editInstructions"></textarea>
+
+            <div class="popup-buttons">
+
+                <button type="button" onclick="updateQuizSettings()"> Save Settings</button>
+
+                <button type="button" onclick="closeSettingsPopup()"> Cancel</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    <script src="quiz.js"></script>
+
+</body>
+</html>

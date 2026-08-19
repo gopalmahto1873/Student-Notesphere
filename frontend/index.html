@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Student Notesphere</title>
+
+    <link rel="icon" href="logo.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+<body>
+
+    <!-- ================= HEADER SECTION ================= -->
+    <header class="header">
+        <!-- Logo -->
+        <img src="logo.png" alt="Student Notesphere Logo" class="logo">
+
+        <!-- Website Title -->
+        <h1>Student Notesphere</h1>
+    </header>
+
+    <!-- ================= NAVIGATION BAR ================= -->
+    <nav>
+
+        <ul class="nav-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="pyq.html">PYQ</a></li>
+            <li id="adminDashboardLink" style="display:none;">
+                <a href="admin.html">Dashboard</a>
+            </li>
+            <li id="teacherDashboardLink" style="display:none;">
+                <a href="teacher.html">Dashboard</a>
+            </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+
+            <a href="login.html" id="loginLink">Login</a>
+
+            <div class="profile-menu" id="profileMenu" style="display:none;">
+
+                <span id="navUserName"></span>
+                <img src="logo.png" id="profileIcon" alt="Profile">
+
+                <div class="dropdown" id="dropdownMenu">
+                    <a href="profile.html">Profile</a>
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= HERO SECTION WITH ADS ================= -->
+    <section class="hero-ad-layout">
+
+        <!-- Left Ad: image or video -->
+        <a href="#"
+        target="_blank"
+        class="ad-box side-ad">
+
+            <img src="ads/left-ad.jpg" alt="Left Advertisement">
+
+        </a>
+
+        <!-- Main Cards -->
+        <div class="cards">
+
+            <a href="notes.html" class="card">
+                <h2>📚 Notes</h2>
+                <p>Download subject wise notes</p>
+            </a>
+
+            <a href="quiz.html" class="card">
+                <h2>📝 Quiz</h2>
+                <p>Test your knowledge</p>
+            </a>
+
+            <a href="pyq.html" class="card">
+                <h2>📄 Previous Year Questions</h2>
+                <p>Practice exam papers</p>
+            </a>
+
+        </div>
+
+        <!-- Right Ad: image or video -->
+        <a href="#"
+        target="_blank"
+        class="ad-box side-ad">
+
+            <video autoplay muted loop playsinline>
+                <source src="ads/right-ad.mp4" type="video/mp4">
+            </video>
+
+        </a>
+
+    </section>
+
+    <!-- Bottom Banner Ad -->
+    <a href="https://github.com/gopalmahto1873"
+    target="_blank"
+    class="ad-box bottom-ad">
+
+      <!--  <img src="ads/banner-ad.jpg" alt="Banner Advertisement">-->
+        <video autoplay muted loop playsinline>
+                <source src="ads/banner-ad.mp4" type="video/mp4">
+            </video>
+
+    </a>
+
+    <section id="about" class="about-section">
+        <h2>About Student Notesphere</h2>
+
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Smart Academic Learning Platform</h3>
+                <p>
+                    Student Notesphere is an ongoing major project designed to help students
+                    access notes, study materials, and practice quizzes in one place.
+                </p>
+                <p>
+                    It supports role-based access for Students, Teachers, and Admins with
+                    organized notes, smart search, quiz practice, and admin management.
+                </p>
+            </div>
+
+            <div class="about-features">
+                <div class="feature-mini-card">📚 Notes Management</div>
+                <div class="feature-mini-card">📝 Smart Quiz System</div>
+                <div class="feature-mini-card">🔐 Role Based Access</div>
+                <div class="feature-mini-card">📊 Admin Dashboard</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us / Feedback</h2>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>We value your feedback</h3>
+                <p>Have suggestions, issues, or questions about Student Notesphere?</p>
+                <p>Send us your message and we will review it.</p>
+
+                <div class="contact-point">📧 Official Feedback Mail</div>
+                <div class="contact-point">💬 Student Support</div>
+                <div class="contact-point">🚀 Project Improvement</div>
+            </div>
+
+            <form id="contactForm">
+                <input type="text" id="contactName" placeholder="Your Name" required>
+                <input type="email" id="contactEmail" placeholder="Your Email" required>
+                <textarea id="contactMessage" placeholder="Write your message or feedback..." required></textarea>
+                <button type="submit">Send Feedback</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ================= LOGOUT POPUP ================= -->
+
+<div id="logoutPopupOverlay" class="custom-popup-overlay">
+
+    <div class="custom-popup-box">
+
+        <h2 id="logoutPopupTitle">
+            Success ✅
+        </h2>
+
+        <p id="logoutPopupMessage">
+            Logged out successfully
+        </p>
+
+        <div class="custom-popup-actions">
+
+            <button type="button"
+                id="logoutPopupOkBtn">
+
+                OK
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Left -->
+        <div class="footer-box">
+            <h2>Student Notesphere</h2>
+
+            <p>
+                A smart platform for students to access notes,
+                quizzes, and previous year questions easily.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="pyq.html">PYQ</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h3>Contact</h3>
+
+            <p>📧 support@studentnotesphere.com</p>
+
+            <p>📍 India</p>
+        </div>
+
+    </div>
+
+    <div class="social-icons">
+
+    <a href="https://youtube.com/@gopalmahto73?si=c-atJ1TyQ831wD-r"
+       target="_blank">
+
+       <i class="fab fa-youtube"></i>
+    </a>
+
+    <a href="https://www.instagram.com/i_g.mahto73?utm_source=qr&igsh=MTNwaHVhYTZzbDUxcA=="
+       target="_blank">
+
+       <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://www.facebook.com/share/19oBrCCKeZ/"
+       target="_blank">
+
+       <i class="fab fa-facebook"></i>
+    </a>
+
+    <a href="https://github.com/gopalmahto1873"
+       target="_blank">
+
+       <i class="fab fa-github"></i>
+    </a>
+
+</div>
+    <!-- Bottom -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Student Notesphere | Designed By
+            <strong>Gopal Kumar Mahto</strong>
+        </p>
+
+    </div>
+
+</footer>
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    <script src="index.js"></script>
+    <script src="contact.js"></script>
+
+</body>
+</html>

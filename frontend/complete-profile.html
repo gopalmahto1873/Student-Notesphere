@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Profile</title>
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo-title">
+            <img src="logo.png" alt="Logo">
+            <h1>Student Notesphere</h1>
+        </div>
+
+    </header>
+
+    <!-- COMPLETE PROFILE SECTION -->
+    <div class="login-section">
+
+        <div class="login-container">
+
+            <h2>Complete Your Profile</h2>
+
+            <p
+                style="
+                    text-align:center;
+                    margin-bottom:20px;
+                "
+            >
+                Please fill all mandatory details
+            </p>
+
+            <form id="completeProfileForm" >
+
+                <!-- DOB -->
+                <div class="input-box">
+                    <label>Date of Birth</label>
+                    <input type="date" id="dob" required >
+                </div>
+
+                <!-- Department -->
+                <div class="input-box">
+                    <label>Department</label>
+
+                    <select id="department" required>
+
+                        <option value="">Select Department</option>
+                        <option value="BCA">BCA</option>
+                        <option value="BBA">BBA</option>
+                        <option value="MCA">MCA</option>
+                        <option value="MBA">MBA</option>
+                    </select>
+                </div>
+
+                <!-- Session -->
+                <div class="input-box">
+                    <label>Session</label>
+                    <input type="text" id="session" placeholder="2024-2027" required>
+                </div>
+
+                <!-- Semester -->
+                <div class="input-box">
+                    <label>Semester</label>
+
+                    <select
+                        id="semester"
+                        required
+                    >
+                        <option value="">
+                            Select Semester
+                        </option>
+
+                        <option value="Sem1">
+                            Semester 1
+                        </option>
+
+                        <option value="Sem2">
+                            Semester 2
+                        </option>
+
+                        <option value="Sem3">
+                            Semester 3
+                        </option>
+
+                        <option value="Sem4">
+                            Semester 4
+                        </option>
+
+                        <option value="Sem5">
+                            Semester 5
+                        </option>
+
+                        <option value="Sem6">
+                            Semester 6
+                        </option>
+                    </select>
+                </div>
+
+                <!-- Student Type -->
+                <div class="input-box">
+
+                    <label>Student Type</label>
+                    <select id="studentType" required >
+                        <option value="">
+                            Select Type
+                        </option>
+
+                        <option value="Regular">
+                            Regular
+                        </option>
+
+                        <option value="Ex-Student">
+                            Ex-Student
+                        </option>
+                    </select>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="login-btn">Complete Profile</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="complete-profile.js"></script>
+
+</body>
+</html>

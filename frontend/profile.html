@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - Student Notesphere</title>
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-title">
+            <img src="logo.png" alt="Logo">
+            <h1>Student Notesphere</h1>
+        </div>
+
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+    </header>
+
+    <nav>
+
+        <ul class="nav-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="pyq.html">PYQ</a></li>
+            <li id="adminDashboardLink" style="display:none;">
+                <a href="admin.html">Dashboard</a>
+            </li>
+            <li id="teacherDashboardLink" style="display:none;">
+                <a href="teacher.html">Dashboard</a>
+            </li>
+        </ul>
+
+        <div class="nav-right">
+
+            <a href="login.html" id="loginLink">Login</a>
+
+            <div class="profile-menu" id="profileMenu" style="display:none;">
+
+                <span id="navUserName"></span>
+                <img src="logo.png" id="profileIcon" alt="Profile">
+
+                <div class="dropdown" id="dropdownMenu">
+
+                    <a href="profile.html">Profile</a>
+                    <a href="#" id="logoutBtn">Logout</a>
+
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="profile-section">
+        <div class="profile-container profile-grid">
+
+            <!-- LEFT SIDE -->
+            <div class="profile-left">
+                <h2 class="profile-title">Student Profile</h2>
+
+                <div class="profile-photo">
+                    <img src="logo.png" id="profileImage" alt="Profile Photo">
+                </div>
+
+                <div class="input-box">
+                    <label>Update Profile Photo</label>
+                    <input type="file" id="newProfilePhoto" accept="image/*">
+                </div>
+
+                <button class="login-btn" onclick="updateProfilePhoto()">
+                    Update Photo
+                </button>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="profile-right">
+
+                <h2>Personal Details</h2>
+
+                <div class="profile-form-grid">
+
+                    <div class="input-box">
+                        <label>First Name <span class="required">*</span> </label>
+                        <input type="text" id="firstName" placeholder="Enter first name">
+                    </div>
+
+                    <div class="input-box">
+                        <label>Middle Name</label>
+                        <input type="text" id="middleName" placeholder="Enter middle name">
+                    </div>
+
+                    <div class="input-box">
+                        <label>Last Name </label>
+                        <input type="text" id="lastName" placeholder="Enter last name">
+                    </div>
+
+                    <div class="input-box">
+                        <label>Date of Birth  <span class="required">*</span> </label>
+                        <input type="date" id="dob">
+                    </div>
+
+                </div>
+
+                <h3 class="form-section-title">Academic Details</h3>
+
+                <div id="studentSection">
+
+                    <!-- Student Type -->
+
+                    <div class="student-type-container">
+
+                        <label class="section-label">
+                            Student Type
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="radio-group">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="studentType"
+                                    value="Regular">
+
+                                Regular Student
+                            </label>
+
+                            <label>
+
+                                <input
+                                    type="radio"
+                                    name="studentType"
+                                    value="Ex-Student">
+
+                                Ex Student
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Regular -->
+
+                    <div
+                        id="regularFields"
+                        class="student-fields"
+                        style="display:none;">
+
+                        <h3 class="form-section-title">
+                            Regular Student Details
+                        </h3>
+
+                        <div class="profile-form-grid">
+
+                            <div class="input-box">
+
+                                <label>
+                                    University
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="university">
+
+                            </div>
+
+                            <div class="input-box">
+
+                                <label>
+                                    Department
+                                    <span class="required">*</span>
+                                </label>
+
+                                <select id="department">
+
+                                    <option value="">
+                                        Select Department
+                                    </option>
+
+                                    <option>BCA</option>
+                                    <option>BBA</option>
+                                    <option>MCA</option>
+                                    <option>MBA</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="input-box">
+
+                                <label>
+                                    Session
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="session">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Ex Student -->
+
+                    <div
+                        id="exStudentFields"
+                        class="student-fields"
+                        style="display:none;">
+
+                        <h3 class="form-section-title">
+                            Ex Student Details
+                        </h3>
+
+                        <div class="profile-form-grid">
+
+                            <div class="input-box">
+
+                                <label>Last Session</label>
+
+                                <input type="text"id="lastSession">
+
+                            </div>
+
+                            <div class="input-box">
+
+                                <label>Last University</label>
+
+                                <input type="text" id="lastUniversity">
+
+                            </div>
+
+                            <div class="input-box">
+
+                                <label>Passing Year</label>
+
+                                <input type="number" id="passingYear">
+
+                            </div>
+
+                            <div class="input-box">
+
+                                <label>Current Status</label>
+
+                                <select id="currentStatus">
+
+                                    <option value="">
+                                        Select
+                                    </option>
+
+                                    <option>Working</option>
+                                    <option>Higher Studies</option>
+                                    <option>Business</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= TEACHER SECTION ================= -->
+
+                <div id="teacherSection" style="display:none;">
+
+                    <h2 class="profile-subtitle">
+                        Teacher Details
+                    </h2>
+
+                    <div class="teacher-status-box">
+
+                        <h3>Verification Status</h3>
+
+                        <p>
+                            <strong>Status :</strong>
+                            <span id="approvalStatus">Pending</span>
+                        </p>
+
+                        <p id="reasonBox" style="display:none;">
+
+                            <strong>Reason :</strong>
+
+                            <span id="rejectionReason"></span>
+
+                        </p>
+
+                    </div>
+
+                    <div class="profile-form-grid">
+
+                        <div class="input-box">
+                            <label>Qualification <span class="required">*</span></label>
+                            <select id="qualification">
+                                <option value="">Select Qualification</option>
+                                <option>B.Ed</option>
+                                <option>M.Ed</option>
+                                <option>BCA</option>
+                                <option>MCA</option>
+                                <option>B.Sc</option>
+                                <option>M.Sc</option>
+                                <option>B.Tech</option>
+                                <option>M.Tech</option>
+                                <option>PhD</option>
+                                <option>NET Qualified</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="input-box">
+                            <label>Subject <span class="required">*</span></label>
+                            <input type="text" id="subject">
+                        </div>
+
+                        <div class="input-box">
+                            <label>Experience (Years)</label>
+                            <input type="number" id="experience">
+                        </div>
+
+                        <div class="input-box">
+                            <label>Institution <span class="required">*</span></label>
+                            <input type="text" id="institution">
+                        </div>
+
+                        <div class="input-box">
+                            <label>Designation</label>
+                            <input type="text" id="designation">
+                        </div>
+
+                        <div class="input-box">
+                            <label>Update ID Proof</label>
+                            <input type="file" id="newIdProof" accept=".pdf,.jpg,.jpeg,.png">
+                        </div>
+
+                        <button
+                            type="button"
+                            class="login-btn"
+                            onclick="updateTeacherIdProof()">
+
+                            Update ID Proof
+
+                        </button>
+
+                        <div class="input-box">
+
+                            <label>Current ID Proof</label>
+
+                            <a id="idProofLink"  href="#" target="_blank" style="display:none;">
+
+                                View Uploaded ID Proof
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= ACCOUNT INFORMATION ================= -->
+
+                <h2 class="profile-subtitle">
+                    Account Information
+                </h2>
+
+                <div class="profile-form-grid">
+
+                    <div class="input-box">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            readonly>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Student / Teacher ID</label>
+
+                        <input
+                            type="text"
+                            id="customId"
+                            readonly>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Role</label>
+
+                        <input
+                            type="text"
+                            id="role"
+                            readonly>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Registration Date</label>
+
+                        <input
+                            type="text"
+                            id="createdAt"
+                            readonly>
+
+                    </div>
+
+                </div>
+
+                <button
+                    id="updateProfileBtn"
+                    class="login-btn"
+                    onclick="updateProfile()">
+
+                    Update Profile
+
+                </button>
+
+                <!-- ================= CHANGE PASSWORD ================= -->
+
+                <div class="password-box">
+
+                    <h3>
+                        Change Password
+                    </h3>
+
+                    <div class="password-row">
+
+                        <div class="input-box">
+
+                            <label>
+                                Current Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="currentPassword"
+                                placeholder="Enter current password">
+
+                        </div>
+
+                        <div class="input-box">
+
+                            <label>
+                                New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="newPassword"
+                                placeholder="Enter new password">
+
+                        </div>
+
+                        <div class="input-box">
+
+                            <label> Confirm New Password </label>
+
+                            <input type="password" id="confirmNewPassword" placeholder="Confirm new password">
+
+                        </div>
+
+                    </div>
+
+                    <div class="password-btn">
+
+                        <button class="login-btn" onclick="changePassword()"> Change Password </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+    <!-- ================= LOGOUT POPUP ================= -->
+
+    <div id="logoutPopupOverlay" class="custom-popup-overlay">
+
+        <div class="custom-popup-box">
+
+            <h2 id="logoutPopupTitle"> Success ✅ </h2>
+
+            <p id="logoutPopupMessage"> Logged out successfully </p>
+
+            <div class="custom-popup-actions">
+
+                <button type="button" id="logoutPopupOkBtn"> OK </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

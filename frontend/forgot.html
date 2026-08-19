@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - Student Notesphere</title>
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="forgot.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="logo-title">
+            <img src="logo.png" alt="Logo">
+            <h1>Student Notesphere</h1>
+        </div>
+
+        <a href="login.html" class="back-btn">⬅ Back to Login</a>
+    </header>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= MAIN CONTAINER ================= -->
+    <div class="container">
+        <div class="form-box">
+            <h2>Forgot Password</h2>
+
+            <input type="email" id="email" name="email" placeholder="Enter Email">
+            <button id="sendOtpBtn" onclick="sendOTP()">Send OTP</button>
+
+            <input type="text" id="otp" name="otp" placeholder="Enter OTP">
+            <button onclick="verifyOTP()">Verify OTP</button>
+
+            <p id="otpTimer" class="timer-text"></p>
+
+            <button id="resendBtn" onclick="resendOTP()" disabled>
+                Resend OTP
+            </button>
+
+            <input type="password" id="newPassword" name="newPassword" placeholder="New Password">
+            <button id="resetBtn" onclick="resetPassword()" disabled>
+                Reset Password
+            </button>
+
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="forgot.js"></script>
+</body>
+</html>

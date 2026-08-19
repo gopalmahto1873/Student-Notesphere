@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Student Notesphere</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-title">
+            <img src="logo.png" alt="Logo">
+            <h1>Student Notesphere - Dashboard</h1>
+        </div>
+
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="pyq.html">PYQ</a></li>
+        </ul>
+        <div class="nav-right">
+
+            <a href="login.html" id="loginLink">Login</a>
+
+            <div class="profile-menu" id="profileMenu" style="display:none;">
+
+                <span id="navUserName"></span>
+
+                <img src="logo.png" id="profileIcon" alt="Profile">
+
+                <div class="dropdown" id="dropdownMenu">
+                    <a href="profile.html">Profile</a>
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    
+
+    <section class="dashboard-section">
+
+        <div id="dashboardLoader">
+
+            <div class="loaderBox">
+                <div class="loaderCircle"></div>
+
+                <h2>Loading Dashboard...</h2>
+
+                <p>Please wait</p>
+
+            </div>
+
+        </div>
+
+        
+        <div class="dashboard-top" id="dashboardContent">
+            <div class="welcome-box">
+
+                <h2 id="dashboardGreeting">
+                    Good Morning, Admin 👋
+                </h2>
+
+                <p>
+                    Welcome back to Student Notesphere Administration Panel
+                </p>
+
+            </div>
+
+            <div class="right-top-box">
+
+                <div class="dashboard-date">
+                    <span id="todayDate"></span>
+                </div>
+
+                <div class="last-login-box">
+                    <strong>Last Login</strong>
+                    <span id="lastLoginText">Loading...</span>
+                </div>
+
+                <!-- ================= NOTIFICATION BELL ================= -->
+
+                <div class="notification-box">
+
+                    <button id="notificationBtn" class="notification-btn" onclick="toggleNotificationPopup()"> 🔔
+
+                        <span id="notificationCount" class="notification-count"> 0 </span>
+
+                    </button>
+
+                </div>
+
+                <div class="analytics-btn-box">
+
+                    <button id="analyticsBtn" class="analytics-btn" onclick="openAnalyticsBox()" > 📊 User Analytics </button>
+                    
+                    <button class="analytics-btn" onclick="openDepartmentPopup()"> 🏫 Department Analytics </button>
+                    <button class="analytics-btn" onclick="openRecentNotesPopup()"> 📚 Recent Notes </button>
+
+                    <button class="activity-btn" onclick="openActivityPopup()"> 🕒 Recent Activities </button>
+
+                    <div class="mini-analytics" id="miniAnalytics">
+
+                        <button id="closeAnalytics" class="close-analytics" onclick="closeAnalyticsBox()"> ✕ </button>
+
+                        <h4>User Distribution</h4>
+
+                        <div class="analytics-row">
+
+                            <div class="analytics-label">
+                                Students
+                            </div>
+
+                            <div class="mini-bar">
+                                <div id="studentBar"
+                                    class="mini-fill student-fill">
+                                </div>
+                            </div>
+
+                            <span id="studentInfo">
+                                0 (0%)
+                            </span>
+
+                        </div>
+
+                        <div class="analytics-row">
+
+                            <div class="analytics-label">
+                                Teachers
+                            </div>
+
+                            <div class="mini-bar">
+                                <div id="teacherBar"
+                                    class="mini-fill teacher-fill">
+                                </div>
+                            </div>
+
+                            <span id="teacherInfo">
+                                0 (0%)
+                            </span>
+
+                        </div>
+
+                        <div class="analytics-row">
+
+                            <div class="analytics-label">
+                                Admins
+                            </div>
+
+                            <div class="mini-bar">
+                                <div id="adminBar"
+                                    class="mini-fill admin-fill">
+                                </div>
+                            </div>
+
+                            <span id="adminInfoCount">
+                                0 (0%)
+                            </span>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="activityPopup" class="activity-popup">
+
+                    <button class="close-popup" onclick="closeActivityPopup()"> ✕ </button>
+
+                    <h3> 🕒 Recent Activities </h3>
+
+                    <div class="activity-list" id="activityList"> </div>
+
+                    <hr>
+
+                    <h3> 🟢 Recent Login Users</h3>
+
+                    <div id="recentLoginUsers">
+
+                    </div>
+
+                </div>
+
+                <div id="departmentPopup" class="activity-popup">
+
+                    <button class="close-popup" onclick="closeDepartmentPopup()"> ✕ </button>
+
+                    <h3>
+                        🏫 Department Analytics
+                    </h3>
+
+                    <div id="departmentList">
+
+                    </div>
+
+                </div>
+
+                <div id="recentNotesPopup" class="activity-popup">
+
+                    <button class="close-popup" onclick="closeRecentNotesPopup()"> ✕ </button>
+
+                    <h3>
+                        📚 Recent Uploaded Notes
+                    </h3>
+
+                    <div id="recentNotesList">
+
+                    </div>
+
+                </div>
+
+                <!-- ================= NOTIFICATION POPUP ================= -->
+
+                <div id="notificationPopup" class="notification-popup">
+
+                    <div class="notification-header">
+
+                        <h3>Notifications</h3>
+
+                        <button onclick="closeNotificationPopup()"> ✕ </button>
+
+                    </div>
+
+                    <div id="notificationList" class="notification-list">
+
+                        <div class="notification-item">
+
+                            No Notifications
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="analytics-btn"
+                    onclick="openPendingTeachersPopup()">
+
+                    👨‍🏫 Pending Teacher Requests
+
+                </button>
+
+                <div id="pendingTeachersPopup" class="activity-popup">
+
+                    <button class="close-popup" onclick="closePendingTeachersPopup()"> ✕ </button>
+
+                    <h3> 👨‍🏫 Pending Teacher Approval </h3>
+
+                    <div id="pendingTeachersList">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <a href="notes.html" class="quick-btn">📚 Manage Notes</a>
+            <a href="quiz.html" class="quick-btn">📝 Manage Quiz</a>
+            <a href="pyq.html" class="quick-btn">📄 Manage PYQ</a>
+            <a href="#usersTable" class="quick-btn">👥 View Users</a>
+            <button class="quick-btn" onclick="downloadReport()"> 📄 Download Report </button>
+            <button class="quick-btn" onclick="exportUsers()"> 📥 Export Users </button>
+        </div>
+
+        <div class="summary-strip">
+
+            <div class="summary-item">
+                📚 Notes Management System Active
+            </div>
+
+            <div class="summary-item">
+                👥 User Role System Enabled
+            </div>
+
+            <div class="summary-item">
+                🔒 Secure Admin Access
+            </div>
+
+        </div>
+
+        <div class="stats-container">
+
+            <div class="stat-card users-card">
+                <div class="stat-icon">👥</div>
+                <h3 id="totalUsers">0</h3>
+                <p>Total Users</p>
+            </div>
+
+            <div class="stat-card students-card">
+                <div class="stat-icon">🎓</div>
+                <h3 id="students">0</h3>
+                <p>Students</p>
+            </div>
+
+            <div class="stat-card teachers-card">
+                <div class="stat-icon">👨‍🏫</div>
+                <h3 id="teachers">0</h3>
+                <p>Teachers</p>
+            </div>
+
+            <div class="stat-card admins-card">
+                <div class="stat-icon">🛡️</div>
+                <h3 id="admins">0</h3>
+                <p>Admins</p>
+            </div>
+
+            <div class="stat-card notes-card">
+                <div class="stat-icon">📚</div>
+                <h3 id="totalNotes">0</h3>
+                <p>Total Notes</p>
+            </div>
+
+            <div class="stat-card quiz-card">
+                <div class="stat-icon">📝</div>
+                <h3 id="totalQuizzes">0</h3>
+                <p>Total Quiz Sets</p>
+            </div>
+
+            <div class="stat-card pyq-card">
+                <div class="stat-icon">📄</div>
+                <h3 id="totalPYQ">0</h3>
+                <p>Total PYQ</p>
+            </div>
+
+            <div class="stat-card dept-card">
+                <div class="stat-icon">🏫</div>
+                <h3 id="totalDepartments">0</h3>
+                <p>Departments</p>
+            </div>
+
+        </div>
+
+        <div id="adminInfo"></div>
+
+        <div class="table-header">
+
+            <h3>All Users</h3>
+
+            <span id="userCount">
+                Showing 0 users
+            </span>
+
+        </div>
+
+        <div class="user-filter-box">
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input type="text" id="userSearch" placeholder="Search users by name, email or department...">
+
+            </div>
+
+            <select id="roleFilter">
+                <option value="">All Roles</option>
+                <option value="student">Students</option>
+                <option value="teacher">Teachers</option>
+                <option value="admin">Admins</option>
+            </select>
+        </div>
+
+        <div class="table-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name </th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Role</th>
+                        <th>Teacher Approval</th>
+                        <th>Change Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="usersTable">
+                    <!-- Users will load here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer class="admin-footer">
+        © 2026 Student Notesphere Admin Dashboard | Version 1.0
+    </footer>
+
+    <!-- ================= LOGOUT POPUP ================= -->
+
+    <div id="logoutPopupOverlay" class="custom-popup-overlay">
+
+        <div class="custom-popup-box">
+
+            <h2 id="logoutPopupTitle"> Success ✅ </h2>
+
+            <p id="logoutPopupMessage"> Logged out successfully </p>
+
+            <div class="custom-popup-actions">
+
+                <button type="button" id="logoutPopupOkBtn"> OK </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="confirmPopup" class="popup-overlay">
+
+        <div class="popup-card">
+
+            <h3>Change User Role</h3>
+
+            <p id="confirmText"></p>
+
+            <div class="popup-buttons">
+
+                <button id="cancelBtn" > Cancel </button>
+
+                <button id="confirmBtn" > Confirm </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= MESSAGE POPUP ================= -->
+
+    <div id="messagePopup" class="popup-overlay">
+
+        <div class="popup-card">
+
+            <h3 id="messageTitle"> Success ✅ </h3>
+
+            <p id="messageText"> Role updated successfully </p>
+
+            <div class="popup-buttons">
+
+                <button id="messageOkBtn" type="button">OK</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= USER VIEW POPUP ================= -->
+
+    <div id="userViewPopup" class="popup-overlay">
+
+        <div class="user-profile-popup">
+
+            <!-- Close -->
+
+            <button class="close-popup" onclick="closeUserPopup()">✕</button>
+
+            <div class="profile-popup-container">
+
+                <!-- LEFT SIDE -->
+
+                <div class="profile-left">
+
+                    <img id="viewPhoto" src="logo.png" class="popup-user-photo">
+
+                    <h2 id="viewName">User Name</h2>
+
+                    <div id="viewCustomId" class="custom-id"> </div>
+
+                    <div class="left-info">
+
+                        <div class="info-row">
+
+                            <span class="label"> 📧 Email </span>
+
+                            <span id="viewEmail"></span>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span class="label"> 🎂 Date of Birth </span>
+
+                            <span id="viewDOB"></span>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span class="label"  id="studentTypeLabel"> 🎓 Student Type </span>
+
+                            <span id="viewStudentType" class="student-badge"> </span>
+
+                            <!-- Rejection Reason -->
+                            <div id="rejectionReasonCard" class="info-row" style="display:none;">
+
+                                <span class="label">❌ Rejection Reason</span>
+
+                                <span id="viewRejectReason"></span>
+
+                            </div>
+
+                            <!-- Approved By -->
+                            <div id="approvedByCard" class="info-row" style="display:none;">
+
+                                <span class="label">👤 Approved By</span>
+
+                                <span id="viewApprovedBy"></span>
+
+                            </div>
+
+                            <!-- Approved Date -->
+                            <div id="approvedDateCard" class="info-row" style="display:none;">
+
+                                <span class="label">📅 Approved On</span>
+
+                                <span id="viewApprovedDate"></span>
+
+                            </div>
+
+                            <!-- ID Proof -->
+                            <div id="idProofCard" class="info-row" style="display:none;">
+
+                                <span class="label">📄 ID Proof</span>
+
+                                <a
+                                    id="viewIdProof"
+                                    target="_blank"
+                                    class="view-link">
+
+                                    View Document
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span class="label"> 🛡 Role </span>
+
+                            <span id="viewRole" class="popup-role-badge">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="left-info">
+
+                        <div class="info-row">
+
+                            <span class="label">
+                                📅 Account Created
+                            </span>
+
+                            <span id="viewCreatedAt"></span>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span class="label">
+                                🕒 Last Login
+                            </span>
+
+                            <span id="viewLastLogin"></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDE -->
+
+                <div class="profile-right">
+
+                    <h3 id="popupHeading">🎓 Academic Information</h3>
+
+                    <div class="info-row">
+
+                        <span class="label" id="labelUniversity">
+                            University / College
+                        </span>
+
+                        <span id="viewUniversity"></span>
+
+                    </div>
+
+                    <div class="info-row">
+
+                        <span class="label" id="labelDepartment">
+                            Department
+                        </span>
+
+                        <span id="viewDepartment"></span>
+
+                    </div>
+
+                    <div class="info-row">
+
+                        <span class="label" id="labelSession">
+                            Session
+                        </span>
+
+                        <span id="viewSession"></span>
+
+                    </div>
+
+                    <div class="info-row">
+
+                        <span class="label" id="labelSemester">
+                            Semester
+                        </span>
+
+                        <span id="viewSemester"></span>
+
+                    </div>
+
+                    <!-- Ex Student Only -->
+
+                    <div id="passingYearCard" class="info-row">
+
+                        <span class="label"> Passing Year</span>
+                        <span id="viewPassingYear"></span>
+
+                    </div>
+
+                    <div id="currentStatusCard" class="info-row">
+
+                        <span class="label"> Current Status </span>
+                        <span id="viewCurrentStatus"></span>
+
+                    </div>
+
+                    <!-- ================= TEACHER VERIFICATION ================= -->
+
+                    <div id="teacherVerificationSection">
+
+                        <h3>🛡 Teacher Verification</h3>
+
+                        <div class="info-row">
+
+                            <span class="label">Approval Status</span>
+
+                            <span id="viewApprovalStatus"></span>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span class="label">Approved By</span>
+
+                            <span id="viewApprovedBy"></span>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span class="label">Approved Date</span>
+
+                            <span id="viewApprovedAt"></span>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span class="label">Rejection Reason</span>
+
+                            <span id="viewRejectionReason"></span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="popup-footer">
+
+                        <button class="print-btn" onclick="printUser()"> 🖨 Print Profile </button>
+
+                        <button class="close-btn" onclick="closeUserPopup()"> Close </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+        <!-- ================= PHOTO VIEWER ================= -->
+
+    <div id="photoPopup" class="photo-popup-overlay">
+
+        <div class="photo-popup-card">
+
+            <!-- Header -->
+
+            <div class="photo-popup-header">
+
+                <div>
+
+                    <h2 id="photoPopupTitle">
+                        User Photo
+                    </h2>
+
+                    <small id="photoPopupRole">
+                        Student
+                    </small>
+
+                </div>
+
+                <button
+                    class="photo-close-btn"
+                    onclick="closePhotoPopup()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+            <!-- Image -->
+
+            <div class="photo-popup-body">
+
+                <img
+                    id="photoPopupImage"
+                    src="logo.png"
+                    class="popup-large-photo">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= ACTION MENU ================= -->
+
+    <div id="actionMenu" class="action-menu">
+
+        <button onclick="confirmDelete()"> 🗑 Delete User </button>
+
+        <button onclick="printUser()"> 🖨 Print User </button>
+
+    </div>
+
+    <!-- ================= DELETE USER POPUP ================= -->
+
+    <div id="deletePopup" class="popup-overlay">
+
+        <div class="popup-card">
+
+            <h3>Delete User</h3>
+
+            <p id="deleteText"> Are you sure you want to delete this user? </p>
+
+            <div class="popup-buttons">
+
+                <button id="deleteCancelBtn"> Cancel </button>
+
+                <button id="deleteConfirmBtn"> Delete </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= REJECT TEACHER POPUP ================= -->
+
+    <div id="rejectPopup" class="popup-overlay">
+
+        <div class="popup-card">
+
+            <h3>❌ Reject Teacher Request</h3>
+
+            <p>
+                Please enter the reason for rejection.
+            </p>
+
+            <textarea
+                id="rejectReason"
+                rows="5"
+                placeholder="Example: Please upload a valid Faculty ID Card or Employment Proof."
+            ></textarea>
+
+            <div class="popup-buttons">
+
+                <button
+                    type="button"
+                    onclick="closeRejectPopup()">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="button"
+                    onclick="submitRejectTeacher()">
+
+                    Reject
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    <script src="admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Admin - Student Notesphere</title>
+    <link rel="stylesheet" href="quiz-admin.css">
+</head>
+
+<body>
+
+<header class="header">
+    <h1>📝 Quiz Management</h1>
+    <a href="index.html" class="back-btn">⬅ Back to Home</a>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="profile.html">Profile</a></li>
+    </ul>
+</nav>
+
+<section class="quiz-admin-section">
+
+    <h2>Add Quiz Question</h2>
+    <p>Only Admin and Teacher can add quiz questions.</p>
+
+    <form id="quizForm" class="quiz-form">
+
+        <label>Course Type</label>
+        <select id="course" required>
+            <option value="">Select Course</option>
+            <option value="UG">UG</option>
+            <option value="PG">PG</option>
+        </select>
+
+        <label>Department</label>
+        <input 
+            type="text" 
+            id="department" 
+            list="departmentOptions" 
+            placeholder="Enter or select department"
+            required
+        >
+        <datalist id="departmentOptions"></datalist>
+
+        <label>Subject</label>
+        <input 
+            type="text" 
+            id="subject" 
+            list="subjectOptions" 
+            placeholder="Enter or select subject"
+            required
+        >
+        <datalist id="subjectOptions"></datalist>
+
+        <label>Unit</label>
+        <input 
+            type="text" 
+            id="unit" 
+            list="unitOptions" 
+            placeholder="Example: Unit 1"
+            required
+        >
+        <datalist id="unitOptions">
+            <option value="Unit 1">
+            <option value="Unit 2">
+            <option value="Unit 3">
+            <option value="Unit 4">
+            <option value="Unit 5">
+        </datalist>
+
+        <label>Question</label>
+        <textarea id="question" placeholder="Enter quiz question" required></textarea>
+
+        <label>Option 1</label>
+        <input type="text" id="option1" required>
+
+        <label>Option 2</label>
+        <input type="text" id="option2" required>
+
+        <label>Option 3</label>
+        <input type="text" id="option3" required>
+
+        <label>Option 4</label>
+        <input type="text" id="option4" required>
+
+        <label>Correct Answer</label>
+        <select id="correctAnswer" required>
+            <option value="">Select Correct Answer</option>
+        </select>
+
+        <label>Answer Explanation Optional</label>
+        <textarea id="explanation" placeholder="Explain why this answer is correct"></textarea>
+
+        <button type="submit">Add Question</button>
+
+    </form>
+
+</section>
+
+<script src="config.js"></script>
+<script src="quiz-admin.js"></script>
+
+</body>
+</html>

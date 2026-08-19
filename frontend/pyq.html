@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Notesphere - PYQ</title>
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="pyq.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+        <div class="logo-title">
+            <img src="logo.png" alt="Logo">
+            <h1>Student Notesphere - PYQ</h1>
+        </div>
+
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+
+    </header>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+
+        <ul class="nav-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li id="adminDashboardLink" style="display:none;">
+                <a href="admin.html">Dashboard</a>
+            </li>
+            <li id="teacherDashboardLink" style="display:none;">
+                <a href="teacher.html">Dashboard</a>
+            </li>
+        </ul>
+
+        <div class="nav-right">
+
+            <a href="login.html" id="loginLink">Login</a>
+
+            <div class="profile-menu" id="profileMenu" style="display:none;">
+
+                <span id="navUserName"></span>
+
+                <img src="logo.png"
+                    id="profileIcon"
+                    alt="Profile">
+
+                <div class="dropdown" id="dropdownMenu">
+
+                    <a href="profile.html">Profile</a>
+
+                    <a href="#" id="logoutBtn">Logout</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= SEARCH SECTION ================= -->
+    <section class="pyq-search">
+
+        <h2>Previous Year Questions</h2>
+
+        <div class="search-grid">
+
+            <select id="course">
+                <option value="">Select Course</option>
+                <option value="UG">UG</option>
+                <option value="PG">PG</option>
+            </select>
+
+            <select id="department">
+                <option value="">Select Department</option>
+            </select>
+
+            <select id="semester">
+                <option value="">Select Semester</option>
+            </select>
+
+            <input type="text" id="subject" placeholder="Enter Subject">
+
+            <select id="year">
+                <option value="">Select Year</option>
+            </select>
+
+            <select id="examType">
+                <option value="">Exam Type</option>
+                <option value="Mid Semester">Mid Semester</option>
+                <option value="End Semester">End Semester</option>
+            </select>
+
+            <button onclick="searchPYQ()">Search PYQ</button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ADMIN UPLOAD SECTION ================= -->
+    <section id="uploadSection" class="upload-section" style="display:none;">
+
+        <h2>Upload Previous Year Question</h2>
+
+        <form id="pyqForm" class="pyq-upload-form">
+
+            <div class="upload-row">
+
+                <!-- Course -->
+                <div class="field-box">
+                    <label>Select Course <span class="required">*</span></label>
+
+                    <select id="uploadCourse" required>
+                        <option value="">Select Course</option>
+                        <option value="UG">UG</option>
+                        <option value="PG">PG</option>
+                    </select>
+                </div>
+
+                <!-- Department -->
+                <div class="field-box">
+                    <label>Department <span class="required">*</span></label>
+
+                    <input type="text" id="uploadDepartment" placeholder="Department"required>
+                </div>
+
+                <!-- Semester -->
+                <div class="field-box">
+                    <label>Semester <span class="required">*</span></label>
+
+                    <select id="uploadSemester" required>
+                        <option value="">Select Semester</option>
+                        <option value="Sem1">Semester 1</option>
+                        <option value="Sem2">Semester 2</option>
+                        <option value="Sem3">Semester 3</option>
+                        <option value="Sem4">Semester 4</option>
+                    </select>
+                </div>
+
+                <!-- Subject -->
+                <div class="field-box">
+                    <label>Subject <span class="required">*</span></label>
+
+                    <input type="text" id="uploadSubject" placeholder="Subject" required>
+                </div>
+
+                <!-- Year -->
+                <div class="field-box">
+                    <label>Year <span class="required">*</span></label>
+
+                    <select id="uploadYear" required>
+                        <option value="">Select Year</option>
+                    </select>
+                </div>
+
+                <!-- Exam Type -->
+                <div class="field-box">
+                    <label>Exam Type <span class="required">*</span></label>
+
+                    <select id="uploadExamType" required>
+                        <option value="">Exam Type</option>
+                        <option value="Mid Semester">Mid Semester</option>
+                        <option value="End Semester">End Semester</option>
+                        <option value="Sessional">Sessional</option>
+                    </select>
+                </div>
+
+                <!-- File -->
+                <div class="field-box">
+                    <label>Choose File <span class="required">*</span></label>
+
+                    <input type="file" id="uploadFile" accept=".pdf,.jpg,.jpeg,.png" required>
+                </div>
+
+            </div>
+
+            <!-- Description -->
+            <div class="description-box">
+
+                <label>Description</label>
+                <textarea id="uploadDescription" placeholder="Write short description..."></textarea>
+
+            </div>
+
+            <button type="submit" class="upload-pyq-btn"> Upload PYQ </button>
+
+        </form>
+
+    </section>
+
+    <!-- ================= RESULT SECTION ================= -->
+    <section class="pyq-result-section">
+
+        <h2>Available PYQs</h2>
+
+        <div id="pyqList" class="pyq-list"></div>
+
+    </section>
+
+    <!-- ================= UPLOAD SUCCESS POPUP ONLY ================= -->
+    <div id="uploadPopupOverlay" class="upload-popup-overlay">
+
+        <div class="upload-popup-box">
+
+            <h2 id="uploadPopupTitle">Success ✅</h2>
+
+            <p id="uploadPopupMessage">Uploaded successfully</p>
+
+            <button type="button" id="uploadPopupOkBtn">
+                OK
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= CUSTOM COMMON POPUP ================= -->
+    <div id="customPopupOverlay" class="custom-popup-overlay">
+
+        <div class="custom-popup-box">
+
+            <h2 id="customPopupTitle">Message</h2>
+            <p id="customPopupMessage">Popup message here</p>
+
+            <div class="custom-popup-actions">
+
+                <button type="button" id="customPopupCancelBtn">
+                    Cancel
+                </button>
+
+                <button type="button" id="customPopupOkBtn" onclick="closeCustomPopup()">
+                    OK
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= COMMON LOADER ================= -->
+        <div id="commonLoader" class="common-loader-overlay">
+
+            <div class="common-loader-box">
+
+                <div class="loader-spinner"></div>
+
+                <p id="loaderText">Loading...</p>
+
+            </div>
+
+        </div>
+
+        <div id="logoutPopupOverlay" class="custom-popup-overlay">
+    <div class="custom-popup-box">
+        <h2 id="logoutPopupTitle">Success ✅</h2>
+        <p id="logoutPopupMessage">Logged out successfully</p>
+
+        <div class="custom-popup-actions">
+            <button type="button" id="logoutPopupOkBtn">OK</button>
+        </div>
+    </div>
+</div>
+
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    <script src="pyq.js"></script>
+
+</body>
+
+</html>

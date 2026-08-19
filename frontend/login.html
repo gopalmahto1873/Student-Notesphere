@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Student Notesphere - Login</title>
+
+    <link rel="icon" href="logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="login.css">
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+        <div class="logo-title">
+            <img src="logo.png" alt="Logo">
+            <h1>Student Notesphere - Login</h1>
+        </div>
+
+        <!-- Back Button -->
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+
+    </header>
+
+
+    <!-- ================= NAVBAR ================= -->
+  <nav>
+    <ul class="nav-left">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="pyq.html">PYQ</a></li>
+    </ul>
+
+    <div class="nav-right"></div>
+</nav>
+
+    <!-- ================= LOGIN SECTION ================= -->
+    <div class="login-section">
+
+        <div class="login-container">
+
+            <h2>Login</h2>
+
+            <!-- Login Form -->
+            <form onsubmit="loginUser(event)">
+
+                <!-- Email -->
+                <div class="input-box">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <!-- Password -->
+                <div class="input-box">
+                    <label>Password</label>
+
+                    <input type="password" id="password"
+                        placeholder="Enter your password"
+                        required
+                        minlength="8"
+                        pattern="^(?=.*[!@#$%^&*(),.?&:{} ]).{8,}$"
+                        title="Password must be at least 8 characters and include a special character">
+
+                    <!-- Show/Hide Button -->
+                    <span class="show-btn" onclick="togglePassword()">Show</span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="loginBtn" class="login-btn"> Login </button>
+
+                <div style="margin-top: 15px; text-align:center;">
+                    <div id="g_id_onload"
+                        data-client_id="1048480993056-nm513ohjujff50bl66441vlbf94mupb8.apps.googleusercontent.com"
+                        data-callback="handleGoogleResponse">
+                    </div>
+
+                    <div class="g_id_signin"
+                        data-type="standard"
+                        data-shape="rectangular"
+                        data-theme="outline"
+                        data-text="continue_with"
+                        data-size="large"
+                        data-logo_alignment="left">
+                    </div>
+                </div>
+
+                <!-- Register Link -->
+                <p>New user? <a href="register.html">Register</a></p>
+
+                <br>
+
+                <!--Forgot password-->
+                <a href="forgot.html">Forgot Password?</a>
+
+            </form>
+
+        </div>
+    </div>
+
+    <!-- ================= COMMON LOADER ================= -->
+<div id="commonLoader" class="common-loader-overlay">
+
+    <div class="common-loader-box">
+
+        <div class="loader-spinner"></div>
+
+        <p id="loaderText">Loading...</p>
+
+    </div>
+
+</div>
+
+    <!-- ================= LOGIN POPUP ================= -->
+
+<div id="loginPopupOverlay" class="custom-popup-overlay">
+
+    <div class="custom-popup-box">
+
+        <h2 id="loginPopupTitle">Success ✅</h2>
+
+        <p id="loginPopupMessage">Login successful</p>
+
+        <div class="custom-popup-actions">
+            <button type="button" id="loginPopupOkBtn">
+                OK
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    
+
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    <script src="login.js"></script>
+
+
+</body>
+</html>

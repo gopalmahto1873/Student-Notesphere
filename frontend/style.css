@@ -1,0 +1,624 @@
+/* ================= GLOBAL RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ================= BODY ================= */
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(-225deg,#69EACB 0%,#EACCF8 48%,#6654F1 100%);
+    overflow-x:hidden;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ================= HEADER ================= */
+.header{
+    display:flex;
+    align-items:center;
+    padding:10px 20px;
+    background:linear-gradient(to right,#304352 0%,#d7d2cc 100%);
+}
+
+.logo{
+    width:60px;
+    margin-right:15px;
+}
+
+.header h1{
+    font-size:28px;
+    color:wheat;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    background:gray;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:0 30px;
+    min-height:55px;
+    position:sticky;
+    top:0;
+    z-index:9998;
+}
+
+.nav-left{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    padding:10px;
+    gap:18px;
+}
+
+.nav-left li a,
+.nav-right a{
+    text-decoration:none;
+    color:antiquewhite;
+    padding:6px 12px;
+    border-radius:4px;
+    transition:0.3s;
+}
+
+.nav-left li a:hover,
+.nav-right a:hover{
+    background:linear-gradient(to left,#333333,#e9d362);
+    color:rgb(216,216,203);
+}
+
+.nav-right{
+    position:absolute;
+    right:35px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* ================= PROFILE MENU ================= */
+.profile-menu{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+#navUserName{
+    color:#9dff00;
+    font-weight:700;
+    font-size:16px;
+    white-space:nowrap;
+}
+
+#profileIcon{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #090909;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#profileIcon:hover{
+    transform:scale(1.08);
+    border:4px solid rgb(221,230,211);
+}
+
+.dropdown{
+    display:none;
+    position:absolute;
+    top:45px;
+    right:0;
+    background:white;
+    min-width:130px;
+    border-radius:8px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    z-index:999;
+}
+
+.dropdown a{
+    display:block;
+    color:#222;
+    padding:12px 15px;
+    text-decoration:none;
+}
+
+.dropdown a:hover{
+    background:#eeeeee;
+}
+
+/* ================= CARDS SECTION ================= */
+.cards{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+    flex-wrap:nowrap;
+    width:100%;
+}
+
+.card{
+    width:270px;
+    height:180px;
+    background:linear-gradient(to top,#ffafbd 0%,#c9ffbf 100%);
+    border-radius:12px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+    text-decoration:none;
+    color:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:15px;
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.04);
+    background:linear-gradient(to top,#983f4e 0%,#98fc86 100%);
+    color:#fafbfc;
+    box-shadow:0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* ================= ABOUT + CONTACT SECTION ================= */
+.about-section,
+.contact-section{
+    width:85%;
+    margin:35px auto;
+    background:#f4f4f4;
+    padding:35px;
+    border-radius:14px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+.about-section{
+    margin-top:300px;
+}
+
+.about-section h2,
+.contact-section h2{
+    text-align:center;
+    margin-bottom:18px;
+}
+
+.about-grid,
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+    align-items:center;
+}
+
+.about-text h3,
+.contact-info h3{
+    font-size:24px;
+    color:#201d3d;
+    margin-bottom:12px;
+}
+
+.about-text p,
+.contact-info p{
+    text-align:left;
+    line-height:1.7;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.about-features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.feature-mini-card,
+.contact-point{
+    background:linear-gradient(to right,#f7f7f7,#eeeeee);
+    padding:16px;
+    border-radius:12px;
+    box-shadow:0 5px 14px rgba(0,0,0,0.12);
+    font-weight:bold;
+}
+
+.contact-info{
+    background:#f7f7f7;
+    padding:25px;
+    border-radius:14px;
+}
+
+.contact-point{
+    margin-top:12px;
+}
+
+/* ================= CONTACT FORM ================= */
+.contact-section form{
+    max-width:700px;
+    margin:20px auto 0;
+    background:#f7f7f7;
+    padding:25px;
+    border-radius:14px;
+}
+
+.contact-section input,
+.contact-section textarea{
+    width:100%;
+    padding:13px;
+    margin:10px 0;
+    border-radius:9px;
+    border:1px solid #aaa;
+    font-size:15px;
+    outline:none;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus{
+    border-color:#2f293d;
+    box-shadow:0 0 7px rgba(47,41,61,0.35);
+}
+
+.contact-section textarea{
+    min-height:135px;
+    resize:vertical;
+}
+
+.contact-section button{
+    width:100%;
+    padding:13px;
+    background:linear-gradient(to right,#1c1c1d,#2f293d,#333);
+    color:white;
+    border:none;
+    border-radius:9px;
+    cursor:pointer;
+    font-size:16px;
+    margin-top:8px;
+}
+
+.contact-section button:hover{
+    transform:translateY(-2px);
+    opacity:0.9;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media(max-width:768px){
+
+    .header{
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+        padding:15px;
+    }
+
+    .logo{
+        width:48px;
+        margin-right:0;
+        margin-bottom:8px;
+    }
+
+    .header h1{
+        font-size:24px;
+    }
+
+    nav{
+        flex-direction:column;
+        padding:10px;
+        gap:10px;
+    }
+
+    .nav-left{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+        padding:0;
+    }
+
+    .nav-right{
+        position:static;
+        justify-content:center;
+    }
+
+    #navUserName{
+        display:none;
+    }
+
+    .cards{
+        margin-top:45px;
+        gap:22px;
+        padding:0 15px;
+    }
+
+    .card{
+        width:100%;
+        max-width:340px;
+        height:165px;
+    }
+
+    .about-section{
+        margin-top:60px;
+    }
+
+    .about-section,
+    .contact-section{
+        width:92%;
+        padding:24px;
+    }
+
+    .about-grid,
+    .contact-grid,
+    .about-features{
+        grid-template-columns:1fr;
+    }
+}
+
+.custom-popup-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.58);
+    z-index:999999;
+    justify-content:center;
+    align-items:center;
+    padding:18px;
+}
+
+.custom-popup-box{
+    width:100%;
+    max-width:390px;
+    background:linear-gradient(to left,#536976,#bbd2c5);
+    border-radius:18px;
+    padding:28px;
+    text-align:center;
+    box-shadow:0 12px 35px rgba(0,0,0,0.35);
+}
+
+.custom-popup-actions{
+    display:flex;
+    gap:12px;
+    margin-top:24px;
+}
+
+.custom-popup-actions button{
+    flex:1;
+    padding:11px;
+    border:none;
+    border-radius:9px;
+    background:linear-gradient(to right,#1c1c1d,#2f293d,#333);
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    background: linear-gradient(to right,
+    rgba(32,29,61,1),
+    rgba(69,69,82,1),
+    rgba(118,122,122,1));
+
+    color: white;
+
+    padding-top: 50px;
+
+    margin-top: 60px;
+}
+
+.footer-container{
+    width: 90%;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 40px;
+}
+
+.footer-box{
+    flex: 1;
+
+    min-width: 220px;
+}
+
+.footer-box h2,
+.footer-box h3{
+    margin-bottom: 15px;
+
+    color: #ffe0b2;
+}
+
+.footer-box p{
+    line-height: 1.8;
+
+    color: #f1f1f1;
+}
+
+.footer-box ul{
+    list-style: none;
+
+    padding: 0;
+}
+
+.footer-box ul li{
+    margin-bottom: 10px;
+}
+
+.footer-box ul li a{
+    text-decoration: none;
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+.footer-box ul li a:hover{
+    color: #ffd54f;
+
+    padding-left: 5px;
+}
+
+.footer-bottom{
+    text-align: center;
+
+    padding: 18px;
+
+    margin-top: 40px;
+
+    border-top: 1px solid rgba(255,255,255,0.2);
+
+    font-size: 15px;
+}
+
+/* ================= SOCIAL ICONS ================= */
+
+.social-icons{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 25px;
+
+    margin-bottom: 20px;
+}
+
+.social-icons a{
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.1);
+
+    color: white;
+
+    font-size: 22px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.social-icons a:hover{
+
+    transform: translateY(-5px);
+
+    background: #ffd54f;
+
+    color: black;
+}
+
+@media(max-width:900px){
+    .hero-ad-layout{
+        grid-template-columns:1fr;
+    }
+
+    .side-ad{
+        height:180px;
+    }
+
+    .bottom-ad{
+        width:90%;
+    }
+}
+
+/* ================= HERO ADS + CARDS FINAL ================= */
+
+.hero-ad-layout{
+    width:95%;
+    margin:80px auto 30px;
+    display:grid;
+    grid-template-columns:220px 1fr 220px;
+    gap:35px;
+    align-items:center;
+}
+
+.hero-ad-layout .cards{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+    flex-wrap:nowrap;
+    margin:0;
+}
+
+.hero-ad-layout .card{
+    width:270px;
+    height:180px;
+}
+
+/* Common ad box: image/video दोनों के लिए */
+.ad-box{
+    display:block;
+    overflow:hidden;
+    border-radius:18px;
+    background:rgba(255,255,255,0.22);
+    box-shadow:0 12px 30px rgba(0,0,0,0.25);
+    text-decoration:none;
+    transition:0.3s ease;
+}
+
+.ad-box:hover{
+    transform:translateY(-5px) scale(1.02);
+    box-shadow:0 16px 35px rgba(0,0,0,0.32);
+}
+
+/* Side ads */
+.side-ad{
+    height:330px;
+}
+
+/* Bottom banner */
+.bottom-ad{
+    width:55%;
+    height:95px;
+    margin:25px auto 70px;
+}
+
+/* Image and video fit */
+.ad-box img,
+.ad-box video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* Responsive */
+@media(max-width:1100px){
+    .hero-ad-layout{
+        grid-template-columns:1fr;
+        margin-top:50px;
+    }
+
+    .hero-ad-layout .cards{
+        flex-wrap:wrap;
+    }
+
+    .side-ad{
+        height:180px;
+    }
+
+    .bottom-ad{
+        width:90%;
+    }
+}
